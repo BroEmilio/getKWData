@@ -55,7 +55,7 @@ public class GUI {
 		
 		JMenuItem mntmPlik = new JMenuItem("Plik");
 		mntmPlik.setHorizontalAlignment(SwingConstants.LEFT);
-		mntmPlik.setBounds(0, 0, 51, 22);
+		mntmPlik.setBounds(0, 0, 50, 22);
 		mntmPlik.setHorizontalTextPosition(SwingConstants.LEFT);
 		frame.getContentPane().add(mntmPlik);
 		
