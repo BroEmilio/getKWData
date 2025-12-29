@@ -3,8 +3,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JPanel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
@@ -101,7 +99,7 @@ public class GUI extends JFrame{
 		}
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0};
+		gridBagLayout.rowWeights = new double[]{0.0, 1.0, 0.0, 0.0};
 		gridBagLayout.columnWeights = new double[]{1.0, 0.0};
 		gridBagLayout.columnWidths = new int[]{245, 89};
 		gridBagLayout.rowHeights = new int[]{63, 154, 22, 76};
@@ -118,7 +116,7 @@ public class GUI extends JFrame{
 		gbc_lblInfoFieldNum.gridy = 0;
 		gbc_lblInfoFieldNum.weightx=0;
 		gbc_lblInfoFieldNum.weighty=0;
-		lblInfoFieldNum.setMaximumSize(new Dimension(20,30));
+		lblInfoFieldNum.setMaximumSize(new Dimension(90,70));
 		frame.getContentPane().add(lblInfoFieldNum, gbc_lblInfoFieldNum);
 		
 		JTextField textBox_FieldData = new JTextField();

@@ -125,7 +125,9 @@ public class ProcessFile {
 				}
 						
 			}
-			System.out.println(listFieldsData);
+			
+			for(FieldData data:listFieldsData)
+				System.out.println(data.toString());
 			
 				//for(org.jsoup.nodes.Element trow : trows){
 					
