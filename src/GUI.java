@@ -48,7 +48,7 @@ public class GUI extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	private void createMenuBar() {
-		JMenu menuFile = new JMenu("Plik");
+		JMenu menuFile = new JMenu("Plik html");
 		menuFile.setFont(style1);
 		
 		JMenuItem loadItem = new JMenuItem("Wczytaj plik html z danymi EGiB");
