@@ -16,6 +16,8 @@ public class ProcessFile {
 	Path loadedFile, tempFile, savingFile;
 	SavingFileProfile saver;
 	Path tempFilePath = Paths.get(System.getProperty("user.home")+"\\Desktop");
+	ArrayList<FieldData> listFieldsData = new ArrayList<FieldData>();
+	
 	
 	/*
 	String processLineOfFile(String originalLine) {
@@ -116,13 +118,14 @@ public class ProcessFile {
 						writer.flush();
 					}
 					
-					
+					if(fieldData != null)
+						listFieldsData.add(fieldData);
 					//System.out.println(trow.text()+"\n");
 					
 				}
-				System.out.println(fieldData);		
+						
 			}
-			
+			System.out.println(listFieldsData);
 			
 				//for(org.jsoup.nodes.Element trow : trows){
 					

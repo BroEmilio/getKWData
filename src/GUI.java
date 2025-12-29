@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
@@ -90,6 +91,7 @@ public class GUI extends JFrame{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 345, 393);
 		frame.setMinimumSize(new Dimension(300,350));
+		frame.setMaximumSize(new Dimension(600,700));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
@@ -99,10 +101,10 @@ public class GUI extends JFrame{
 		}
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 1.0};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0};
 		gridBagLayout.columnWeights = new double[]{1.0, 0.0};
-		gridBagLayout.columnWidths = new int[]{201, 115};
-		gridBagLayout.rowHeights = new int[]{41, 200, 100};
+		gridBagLayout.columnWidths = new int[]{245, 89};
+		gridBagLayout.rowHeights = new int[]{63, 154, 22, 76};
 		frame.getContentPane().setLayout(gridBagLayout);
 			
 		JLabel lblInfoFieldNum = new JLabel(
@@ -110,36 +112,49 @@ public class GUI extends JFrame{
 				+ "skopiowanie danych do schowka</div></html>");
 		lblInfoFieldNum.setFont(new Font("Arial Narrow", Font.ITALIC, 10));
 		GridBagConstraints gbc_lblInfoFieldNum = new GridBagConstraints();
-		gbc_lblInfoFieldNum.anchor = GridBagConstraints.NORTH;
 		gbc_lblInfoFieldNum.fill = GridBagConstraints.HORIZONTAL;
 		gbc_lblInfoFieldNum.insets = new Insets(0, 0, 5, 0);
 		gbc_lblInfoFieldNum.gridx = 1;
 		gbc_lblInfoFieldNum.gridy = 0;
-		lblInfoFieldNum.setMaximumSize(new Dimension(54,115));
+		gbc_lblInfoFieldNum.weightx=0;
+		gbc_lblInfoFieldNum.weighty=0;
+		lblInfoFieldNum.setMaximumSize(new Dimension(20,30));
 		frame.getContentPane().add(lblInfoFieldNum, gbc_lblInfoFieldNum);
 		
-		JPanel panel_FieldData = new JPanel();
+		JTextField textBox_FieldData = new JTextField();
 		GridBagConstraints gbc_FieldData = new GridBagConstraints();
+		gbc_FieldData.fill = GridBagConstraints.BOTH;
 		gbc_FieldData.insets = new Insets(0, 0, 5, 5);
 		gbc_FieldData.gridx = 0;
 		gbc_FieldData.gridy = 1;
-		frame.getContentPane().add(panel_FieldData, gbc_FieldData);
+		gbc_FieldData.weightx=1;
+		gbc_FieldData.weighty=1;
+		frame.getContentPane().add(textBox_FieldData, gbc_FieldData);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
-		gbc_scrollPane.insets = new Insets(0, 0, 5, 0);
-		gbc_scrollPane.gridx = 1;
-		gbc_scrollPane.gridy = 1;
-		frame.getContentPane().add(scrollPane, gbc_scrollPane);
+		JList<String> listFieldsNumbers = new JList<String>();
+		GridBagConstraints gbc_listFieldsNumbers = new GridBagConstraints();
+		gbc_listFieldsNumbers.fill = GridBagConstraints.BOTH;
+		gbc_listFieldsNumbers.insets = new Insets(0, 0, 5, 0);
+		gbc_listFieldsNumbers.gridx = 1;
+		gbc_listFieldsNumbers.gridy = 1;
+		gbc_listFieldsNumbers.weightx=0;
+		frame.getContentPane().add(listFieldsNumbers, gbc_listFieldsNumbers);
 		
-		JPanel panel_Clipboard = new JPanel();
-		GridBagConstraints gbc_Clipboard_1 = new GridBagConstraints();
-		gbc_Clipboard_1.gridwidth = 2;
-		gbc_Clipboard_1.insets = new Insets(0, 0, 0, 5);
-		gbc_Clipboard_1.fill = GridBagConstraints.BOTH;
-		gbc_Clipboard_1.gridx = 0;
-		gbc_Clipboard_1.gridy = 2;
-		frame.getContentPane().add(panel_Clipboard, gbc_Clipboard_1);
+		JLabel lblAktualnieWSchowku = new JLabel("Aktualnie w schowku");
+		GridBagConstraints gbc_lblAktualnieWSchowku = new GridBagConstraints();
+		gbc_lblAktualnieWSchowku.gridwidth = 2;
+		gbc_lblAktualnieWSchowku.insets = new Insets(0, 0, 5, 5);
+		gbc_lblAktualnieWSchowku.gridx = 0;
+		gbc_lblAktualnieWSchowku.gridy = 2;
+		frame.getContentPane().add(lblAktualnieWSchowku, gbc_lblAktualnieWSchowku);
+		
+		JTextField textBox_Clipboard = new JTextField();
+		GridBagConstraints gbc_Clipboard = new GridBagConstraints();
+		gbc_Clipboard.gridwidth = 2;
+		gbc_Clipboard.fill = GridBagConstraints.BOTH;
+		gbc_Clipboard.gridx = 0;
+		gbc_Clipboard.gridy = 3;
+		frame.getContentPane().add(textBox_Clipboard, gbc_Clipboard);
 		
 	}
 }
