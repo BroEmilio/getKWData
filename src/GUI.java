@@ -2,23 +2,30 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JPanel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.nio.file.Path;
 
 public class GUI extends JFrame{
 	private static final long serialVersionUID = 1L;
 	Font style1 = new Font("Arial", Font.ITALIC, 14);
 	Font style2 = new Font("Arial", Font.ITALIC, 12);
     JFrame frame;
+    Path choosedFile;
 
 	/**
 	 * Launch the application.
@@ -48,11 +55,28 @@ public class GUI extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	private void createMenuBar() {
-		JMenu menuFile = new JMenu("Plik html");
+		JMenu menuFile = new JMenu("Plik");
 		menuFile.setFont(style1);
 		
 		JMenuItem loadItem = new JMenuItem("Wczytaj plik html z danymi EGiB");
 		loadItem.setFont(style2);
+		loadItem.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		LoadingFileProfile loader = new LoadingFileProfile();
+        		choosedFile = loader.getPath();
+        		if(choosedFile!=null) {
+        			ProcessFile fileProcessing = new ProcessFile(choosedFile);
+        			if(fileProcessing.run()) {
+	        			int result=JOptionPane.showConfirmDialog(null,
+	        						"Poprawnie przetworzono plik "+choosedFile.getFileName().toString(),
+	        						"Poprawnie przetworzono",
+	        						JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        				if(result==JOptionPane.OK_OPTION || result == JOptionPane.CANCEL_OPTION)
+        					System.exit(0);
+        			}
+        		}
+        	}		
+    	});
 		
 		menuFile.add(loadItem);
 		
@@ -67,6 +91,13 @@ public class GUI extends JFrame{
 		frame.setBounds(100, 100, 345, 393);
 		frame.setMinimumSize(new Dimension(300,350));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		try {
+			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+			SetPolishForGUI.setForFileChoosers();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 1.0};
 		gridBagLayout.columnWeights = new double[]{1.0, 0.0};
