@@ -104,7 +104,7 @@ public class ProcessFile {
 								String[] firstLine = tData.select("td").get(1).toString().split(";");
 								
 								// get Name for individual people
-								if(firstLine[0].contains("Rodzice")) {
+								if(firstLine[0].contains("Rodzice") && ! firstLine[0].contains("ma³¿eñstwo")) {
 									String[] nameList = firstLine[0].split("Rodzice");
 									String nameRaw = nameList[0].subSequence(4, nameList[0].length()-1).toString();
 									//System.out.println("Name "+nameRaw);
@@ -112,7 +112,27 @@ public class ProcessFile {
 								}
 								
 								if(firstLine[0].contains("ma³¿eñstwo")) {
-									
+									String marriageOwners = "MA£¯. ";
+									String[] nameList = firstLine[0].split("<br>");
+									boolean isSecond = false;
+									for(String currentLine:nameList) {
+										System.out.println("currentLine: "+currentLine);
+										if(currentLine.contains("Rodzice")){
+											String[] nameRaws = currentLine.split("Rodzice");
+											marriageOwners += nameRaws[0]+" i \r\n    ";
+											
+											/*
+											if(isSecond) {
+												marriageOwners += nameRaw;
+											}
+											if(! isSecond) {
+												marriageOwners += nameRaw+" i \r\n    ";
+												isSecond = true;
+											}
+											*/
+										}
+									}
+									fieldData.addOwner(marriageOwners);
 								}
 								
 								//fieldData.setOwnersList(new ArrayList<String>(Arrays.asList(tData.text().split(" "))));
