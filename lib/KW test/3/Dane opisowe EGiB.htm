@@ -1,0 +1,3703 @@
+<!DOCTYPE html>
+<!-- DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" -->
+<html><head>
+   <title>
+      Dane opisowe EGiB
+   </title>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+	<link rel="stylesheet" href="Dane%20opisowe%20EGiB_pliki/osrodek.css">
+	<link type="text/css" rel="stylesheet" href="Dane%20opisowe%20EGiB_pliki/jquery-ui.css">
+	<link type="text/css" rel="stylesheet" href="Dane%20opisowe%20EGiB_pliki/ts-style.css">
+	
+	<script type="text/javascript" src="Dane%20opisowe%20EGiB_pliki/jquery.js"></script>
+	<script type="text/javascript" src="Dane%20opisowe%20EGiB_pliki/jquery-ui-all.js"></script>
+
+	<style>
+		table.listadz{
+			font-size:11pt;
+			border-width: 2px;
+			border-spacing: 2px;
+			border-style: outset;
+			border-color: gray;
+			border-collapse: collapse;
+		}
+		table.listadz td {
+			border-width: 1px;
+			border-style: inset;
+			border-color: gray;
+			padding:4px 0.8em;
+		}	
+		div.srodek_zewn{
+			text-align:center;
+		}
+		div.srodek_wewn{
+			display:inline-block;
+			text-align:left;
+		}
+		.dzialka_info{
+			border:2px solid black;
+			margin-bottom:2px;
+			padding:1px;
+		}
+		@media print {
+			div.srodek_wewn{
+				display:block;
+			}
+			.dzialka_info2:not(:last-child){
+				page-break-inside:avoid;
+				page-break-after:always;
+			}
+			.dzialka_info2{
+				border-style:none;
+			}
+		}
+		
+	</style>
+	<script>
+	$(document).ready(function () {
+		$("#div_zaz").show();
+		$( ".my_button" ).button().css("padding", "1px 0.3em");
+	})
+	function pobierz_dane(){
+		var jest=false;
+		var dz='';
+		$('.lisdz').each(function (){
+			if ($(this).prop('checked')){
+				jest=true;
+				dz+=(dz=='' ? '' : '#')+$(this).val();
+			}
+		});
+		if (! jest){
+			alert('Wybierz działkę lub działki');
+			return;
+		}
+		$('#DZIALKI').val(dz);
+		
+		document.getElementById('formatka').submit();
+	}
+	function zaznacz_odznacz(jak){
+		$('.lisdz').each(function (){
+			$(this).prop('checked', jak);
+		});
+	
+	}
+	
+	function print2v(podzial){
+		if (podzial)
+			$('.dzialka_info').addClass('dzialka_info2');
+		else
+			$('.dzialka_info').removeClass('dzialka_info2');
+	  window.print();
+	}
+	
+	</script>
+</head>
+<body>
+<div class="srodek_zewn">
+				<div class="srodek_wewn"><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.569</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>13 (Grunty wojewódzkie)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>WOJEWÓDZTWO WARMIŃSKO-MAZURSKIE<br>10-562 OLSZTYN; UL.EMILII PLATER 1<br> REGON: 510742333</td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>ZARZĄD DRÓG WOJEWÓDZKICH W OLSZTYNIE<br>10-602 OLSZTYN;  UL.PSTROWSKIEGO 28 b<br> REGON: 510751250</td>
+              <td>Trwały zarząd</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>50/2<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.50/2</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>dr</td>
+      <td align="right">0,7729</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,7729</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00026482/4</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_1" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8,13<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_1').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.345</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7 (Grunty osób fizycznych)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>ALICJA MIECZKOWSKA Rodzice:JANUSZ,BEATA<br>ŻEROMSKIEGO 2/2; 12-230 BIAŁA PISKA<br><span> PESEL: 12262801888</span></td>
+              <td>Własność</td>
+              <td>1/2<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>BEATA WERONIKA MIECZKOWSKA Rodzice:STANISŁAW,KRYSTYNA<br>ŻEROMSKIEGO 2; 12-230 BIAŁA PISKA<br><span> PESEL: 74071214862</span></td>
+              <td>Własność</td>
+              <td>1/2<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>161<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.161</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 2<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>Br-RV</td>
+      <td align="right">0,0906</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0906</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00001948/8</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_2" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8,13<br></div><br><div id="bud_sekcja2" style="display: none;"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok2').style.display='';document.getElementById('bud_sekcja2').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste2">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>591</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 2<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1.5 / 1</td>
+            <td align="right">175</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.591_BUD &nbsp;&nbsp;(jednostka rej.: G.345)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00001948/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_2" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>592</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 2<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">78</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.592_BUD &nbsp;&nbsp;(jednostka rej.: G.345)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00001948/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_2" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>593</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 2<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">36</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.593_BUD &nbsp;&nbsp;(jednostka rej.: G.345)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00001948/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_2" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>594</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 2<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">21</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.594_BUD &nbsp;&nbsp;(jednostka rej.: G.345)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00001948/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_2" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok2" style=""> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja2').style.display='';document.getElementById('bud_sekcja_pok2').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_2').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.144</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7 (Grunty osób fizycznych)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>AGNIESZKA PIONTEK-PRUSINOWSKA Rodzice:ZDZISŁAW,JADWIGA<br>ŻEROMSKIEGO 6; 12-230 BIAŁA PISKA<br><span> PESEL: 79021016624</span></td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/1<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/1</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 6<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0641</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0641</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00012704/6</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_3" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8<br></div><br><div id="bud_sekcja3" style="display: none;"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok3').style.display='';document.getElementById('bud_sekcja3').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste3">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>595</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 6<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1.5 / 1</td>
+            <td align="right">108</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.595_BUD &nbsp;&nbsp;(jednostka rej.: G.144)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012704/6</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_3" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>596</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 6<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">80</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.596_BUD &nbsp;&nbsp;(jednostka rej.: G.144)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012704/6</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_3" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok3" style=""> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja3').style.display='';document.getElementById('bud_sekcja_pok3').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_3').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.446</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>4 (Grunty gminne)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>EWA BARTOSEK Rodzice:FRANCISZEK,HALINA<br>KONOPKI 3/3; 12-230 BIAŁA PISKA<br><span> PESEL: 86121813321</span></td>
+              <td>Własność</td>
+              <td>6123/30568<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>MARIA MARKOWSKA Rodzice:ALFRED,REGINA<br>SIENKIEWICZA 3/2; 12-230 BIAŁA PISKA<br><span> PESEL: 53011617268</span></td>
+              <td>Własność</td>
+              <td>3832/30568<br>
+            </td></tr>
+         
+            <tr>
+              <td>3</td>
+              <td>(małżeństwo)<br>DARIUSZ OBRYCKI Rodzice:JERZY,TERESA<br>SIENKIEWICZA 3/3; 12-230 BIAŁA PISKA<br><span> PESEL: 68052509557</span><br><br>MARIA OBRYCKA Rodzice:ANTONI,ZOFIA<br>SIENKIEWICZA 3/3; 12-230 BIAŁA PISKA<br><span> PESEL: 67020205066</span></td>
+              <td>Własność</td>
+              <td>4620/30568<br>
+            </td></tr>
+         
+            <tr>
+              <td>4</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>15993/30568<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/3<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/3</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 3<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0206</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0206</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00022691/4</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_4" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 13<br></div><br><div id="bud_sekcja4" style="display: none;"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok4').style.display='';document.getElementById('bud_sekcja4').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste4">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>597</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 3<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>2 / 1</td>
+            <td align="right">206</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.597_BUD &nbsp;&nbsp;(jednostka rej.: G.446)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Powierzchnia wyodrębnionych lokali: </td><td>128,42</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00022691/4</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_4" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok4" style=""> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja4').style.display='';document.getElementById('bud_sekcja_pok4').style.display='none'">Pokaż budynki<br></span><br></div><br><div id="lok_sekcja4"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja_pok4').style.display='';document.getElementById('lok_sekcja4').style.display='none'">Ukryj lokale<br></span><p><b>Informacja o lokalach: </b></p><div id="lok_proste4"><table class="ewopzew"><tbody><tr><td>Id lokalu</td><td>Numer<br>adresowy</td><td>Funkcja użytkowa</td><td>Pole pow. użytk.</td><td>KW</td></tr><tr><td>281601_4.0001.597_BUD.2_LOK</td><td>3/2</td><td>Mieszkalny</td><td>38,32</td><td>OL1P/00022692/1</td></tr><tr><td>281601_4.0001.597_BUD.3_LOK</td><td>3/3</td><td>Mieszkalny</td><td>38,00</td><td>OL1P/00046573/5</td></tr><tr><td>281601_4.0001.597_BUD.1_LOK</td><td>3/1</td><td>Mieszkalny</td><td>52,10</td><td>OL1P/00046860/4</td></tr></tbody></table>
+		<span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste4').style.display='none';document.getElementById('lok_pelne4').style.display=''"><br>Pokaż pełną informację o lokalach</span><br></div><div id="lok_pelne4" style="display:none"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste4').style.display='';document.getElementById('lok_pelne4').style.display='none'">Pokaż skróconą informację o lokalach<br></span><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.597_BUD.2_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.215</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>2</td>
+      <td>SIENKIEWICZA 3/2<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>38,32</td><td>OL1P/00022692/1</td>
+    </tr>
+
+    </tbody></table>
+  <br><br><hr><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.597_BUD.3_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.863</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>3</td>
+      <td>SIENKIEWICZA 3/3<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>38,00</td><td>OL1P/00046573/5</td>
+    </tr>
+
+    </tbody></table>
+  Pomieszczenia przynależne:<br>&nbsp;&nbsp;&nbsp;Piwnica: 1,51 m2<br>&nbsp;&nbsp;&nbsp;Strych: 6,69 m2<br><br><hr><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.597_BUD.1_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.864</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>1</td>
+      <td>SIENKIEWICZA 3/1<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>52,10</td><td>OL1P/00046860/4</td>
+    </tr>
+
+    </tbody></table>
+  Pomieszczenia przynależne:<br>&nbsp;&nbsp;&nbsp;Piwnica: 9,13 m2<br><br><hr><br></div></div><div id="lok_sekcja_pok4" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja4').style.display='';document.getElementById('lok_sekcja_pok4').style.display='none'">Pokaż lokale<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_4').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.16</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7 (Grunty osób fizycznych)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>RAFAŁ BOGDAŃSKI Rodzice:ANDRZEJ,BOGUMIŁA<br>SIENKIEWICZA 11/2; 12-230 BIAŁA PISKA<br><span> PESEL: 91052209875</span></td>
+              <td>Własność</td>
+              <td>4202/19980<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>(małżeństwo)<br>MARIUSZ JACEK DŁUGOZIMA Rodzice:JAN,ZOFIA<br>TADEUSZA KOŚCIUSZKI 5/2; 12-200 PISZ<br><span> PESEL: 74090610319</span><br><br>AGNIESZKA DŁUGOZIMA Rodzice:WIESŁAW,KRYSTYNA<br>KOLONIA KAWAŁEK 7; 12-230 BIAŁA PISKA<br><span> PESEL: 76060614000</span></td>
+              <td>Własność</td>
+              <td>1935/19980<br>
+            </td></tr>
+         
+            <tr>
+              <td>3</td>
+              <td>(małżeństwo)<br>RYSZARD HĘTNIK Rodzice:ALFRED,REGINA<br>KUMIELSK 28/2; 12-230 BIAŁA PISKA<br><span> PESEL: 67072010117</span><br><br>URSZULA HĘTNIK Rodzice:JERZY,WIERA<br>KUMIELSK 28/2; 12-230 BIAŁA PISKA<br><span> PESEL: 73030814468</span></td>
+              <td>Własność</td>
+              <td>4399/19980<br>
+            </td></tr>
+         
+            <tr>
+              <td>4</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>9444/19980<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/5<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/5</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 11<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0161</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0161</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00014260/5</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_5" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8<br></div><br><div id="bud_sekcja5"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok5').style.display='';document.getElementById('bud_sekcja5').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste5">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>598</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 11<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>3 / 1</td>
+            <td align="right">161</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.598_BUD &nbsp;&nbsp;(jednostka rej.: G.16)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Powierzchnia wyodrębnionych lokali: </td><td>105,36</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00014260/5</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_5" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok5" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja5').style.display='';document.getElementById('bud_sekcja_pok5').style.display='none'">Pokaż budynki<br></span><br></div><br><div id="lok_sekcja5"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja_pok5').style.display='';document.getElementById('lok_sekcja5').style.display='none'">Ukryj lokale<br></span><p><b>Informacja o lokalach: </b></p><div id="lok_proste5"><table class="ewopzew"><tbody><tr><td>Id lokalu</td><td>Numer<br>adresowy</td><td>Funkcja użytkowa</td><td>Pole pow. użytk.</td><td>KW</td></tr><tr><td>281601_4.0001.598_BUD.2_LOK</td><td>11/2</td><td>Mieszkalny</td><td>42,02</td><td>OL1P/00018044/3</td></tr><tr><td>281601_4.0001.598_BUD.3_LOK</td><td>11/3</td><td>Mieszkalny</td><td>43,99</td><td>OL1P/00029113/8</td></tr><tr><td>281601_4.0001.598_BUD.4_LOK</td><td>11/bn</td><td>Niemieszkalny</td><td>19,35</td><td>OL1P/00014261/2</td></tr></tbody></table>
+		<span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste5').style.display='none';document.getElementById('lok_pelne5').style.display=''"><br>Pokaż pełną informację o lokalach</span><br></div><div id="lok_pelne5" style="display:none"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste5').style.display='';document.getElementById('lok_pelne5').style.display='none'">Pokaż skróconą informację o lokalach<br></span><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.598_BUD.2_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.216</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>2</td>
+      <td>SIENKIEWICZA 11/2<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>42,02</td><td>OL1P/00018044/3</td>
+    </tr>
+
+    </tbody></table>
+  <br><br><hr><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.598_BUD.3_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.217</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>3</td>
+      <td>SIENKIEWICZA 11/3<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>43,99</td><td>OL1P/00029113/8</td>
+    </tr>
+
+    </tbody></table>
+  Pomieszczenia przynależne:<br>&nbsp;&nbsp;&nbsp;Liczba piwnic: 1<br>&nbsp;&nbsp;&nbsp;Łączna powierzchnia pomieszczeń przynależnych: 6,86 m2<br><br><hr><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.598_BUD.4_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.218</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>4</td>
+      <td>SIENKIEWICZA 11/bn<br>BIAŁA PISKA</td>
+      <td>Niemieszkalny</td>
+      <td>19,35</td><td>OL1P/00014261/2</td>
+    </tr>
+
+    </tbody></table>
+  <br><br><hr><br></div></div><div id="lok_sekcja_pok5" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja5').style.display='';document.getElementById('lok_sekcja_pok5').style.display='none'">Pokaż lokale<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_5').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.6</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>4 (Grunty gminne)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>(małżeństwo)<br>KAROL CHMIELEWSKI Rodzice:WITOLD,RENATA<br>PLAC ADAMA MICKIEWICZA 5/2; 12-230 BIAŁA PISKA<br><span> PESEL: 99102101157</span><br><br>KINGA BARBARA CHMIELEWSKA Rodzice:JÓZEF,EWA<br>ŁODYGOWO 19/1; 12-230 BIAŁA PISKA<br><span> PESEL: 97120402142</span></td>
+              <td>Własność</td>
+              <td>5497/14971<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>9474/14971<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/7<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/7</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 9<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0124</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0124</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00018198/7</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_6" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8,13<br></div><br><div id="bud_sekcja6"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok6').style.display='';document.getElementById('bud_sekcja6').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste6">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>599</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 9<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>2 / 1</td>
+            <td align="right">123</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.599_BUD &nbsp;&nbsp;(jednostka rej.: G.6)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Powierzchnia wyodrębnionych lokali: </td><td>54,97</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00018198/7</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_6" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok6" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja6').style.display='';document.getElementById('bud_sekcja_pok6').style.display='none'">Pokaż budynki<br></span><br></div><br><div id="lok_sekcja6"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja_pok6').style.display='';document.getElementById('lok_sekcja6').style.display='none'">Ukryj lokale<br></span><p><b>Informacja o lokalach: </b></p><div id="lok_proste6"><table class="ewopzew"><tbody><tr><td>Id lokalu</td><td>Numer<br>adresowy</td><td>Funkcja użytkowa</td><td>Pole pow. użytk.</td><td>KW</td></tr><tr><td>281601_4.0001.599_BUD.3_LOK</td><td>9/3</td><td>Mieszkalny</td><td>54,97</td><td>OL1P/00018199/4</td></tr></tbody></table>
+		<span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste6').style.display='none';document.getElementById('lok_pelne6').style.display=''"><br>Pokaż pełną informację o lokalach</span><br></div><div id="lok_pelne6" style="display:none"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste6').style.display='';document.getElementById('lok_pelne6').style.display='none'">Pokaż skróconą informację o lokalach<br></span><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.599_BUD.3_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.219</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>3</td>
+      <td>SIENKIEWICZA 9/3<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>54,97</td><td>OL1P/00018199/4</td>
+    </tr>
+
+    </tbody></table>
+  <br><br><hr><br></div></div><div id="lok_sekcja_pok6" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja6').style.display='';document.getElementById('lok_sekcja_pok6').style.display='none'">Pokaż lokale<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_6').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.290</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>4 (Grunty gminne)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/9<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/9</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 7<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0193</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0193</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00012410/8</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_7" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 13<br></div><br><div id="bud_sekcja7"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok7').style.display='';document.getElementById('bud_sekcja7').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste7">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>600</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 7<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1.5 / 1</td>
+            <td align="right">178</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.600_BUD &nbsp;&nbsp;(jednostka rej.: G.290)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012410/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_7" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok7" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja7').style.display='';document.getElementById('bud_sekcja_pok7').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_7').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.231</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7 (Grunty osób fizycznych)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>(małżeństwo)<br>ROBERT MASŁOWSKI Rodzice:EDWARD,MARTA<br>ŻEROMSKIEGO 4/1; 12-230 BIAŁA PISKA<br><span> PESEL: 68081908299</span><br><br>LUIZA AGNIESZKA MASŁOWSKA Rodzice:JÓZEF,ELŻBIETA<br>ŻEROMSKIEGO 4/1; 12-230 BIAŁA PISKA<br><span> PESEL: 72082505768</span></td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/12<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/12</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 4<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0244</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0244</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00021535/6</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_8" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8<br></div><br><div id="bud_sekcja8"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok8').style.display='';document.getElementById('bud_sekcja8').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste8">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>605</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 4<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">26</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.605_BUD &nbsp;&nbsp;(jednostka rej.: G.231)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00021535/6</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_8" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok8" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja8').style.display='';document.getElementById('bud_sekcja_pok8').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_8').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.462</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7 (Grunty osób fizycznych)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>PATRYK BARTNICKI Rodzice:JACEK,MATYLDA<br>WŁOSTY 13; 12-230 BIAŁA PISKA<br><span> PESEL: 94092301497</span></td>
+              <td>Własność</td>
+              <td>4323/18640<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>(małżeństwo)<br>ZBIGNIEW FALKOWSKI Rodzice:HENRYK,ZOFIA<br>SIENKIEWICZA 5/2; 12-230 BIAŁA PISKA<br><span> PESEL: 64062209931</span><br><br>BARBARA FALKOWSKA Rodzice:STANISŁAW,MARIANNA<br>SIENKIEWICZA 5/2; 12-230 BIAŁA PISKA<br><span> PESEL: 71040816344</span></td>
+              <td>Własność</td>
+              <td>5592/18640<br>
+            </td></tr>
+         
+            <tr>
+              <td>3</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>8725/18640<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/14<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/14</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 5<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0206</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0206</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00024463/1</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_9" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 13<br></div><br><div id="bud_sekcja9"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok9').style.display='';document.getElementById('bud_sekcja9').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste9">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>606</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 5<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>2 / &nbsp;</td>
+            <td align="right">120</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.606_BUD &nbsp;&nbsp;(jednostka rej.: G.462)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Powierzchnia wyodrębnionych lokali: </td><td>99,15</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00024463/1</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_9" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>607</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 5<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">23</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.607_BUD &nbsp;&nbsp;(jednostka rej.: G.462)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00024463/1</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_9" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>608</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 5<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">39</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.608_BUD &nbsp;&nbsp;(jednostka rej.: G.462)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00024463/1</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_9" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok9" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja9').style.display='';document.getElementById('bud_sekcja_pok9').style.display='none'">Pokaż budynki<br></span><br></div><br><div id="lok_sekcja9"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja_pok9').style.display='';document.getElementById('lok_sekcja9').style.display='none'">Ukryj lokale<br></span><p><b>Informacja o lokalach: </b></p><div id="lok_proste9"><table class="ewopzew"><tbody><tr><td>Id lokalu</td><td>Numer<br>adresowy</td><td>Funkcja użytkowa</td><td>Pole pow. użytk.</td><td>KW</td></tr><tr><td>281601_4.0001.606_BUD.2_LOK</td><td>5/2</td><td>Mieszkalny</td><td>55,92</td><td>30382</td></tr><tr><td>281601_4.0001.606_BUD.4_LOK</td><td>5/4</td><td>Mieszkalny</td><td>43,23</td><td>OL1P/00024464/8</td></tr></tbody></table>
+		<span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste9').style.display='none';document.getElementById('lok_pelne9').style.display=''"><br>Pokaż pełną informację o lokalach</span><br></div><div id="lok_pelne9" style="display:none"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste9').style.display='';document.getElementById('lok_pelne9').style.display='none'">Pokaż skróconą informację o lokalach<br></span><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.606_BUD.2_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.220</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>2</td>
+      <td>SIENKIEWICZA 5/2<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>55,92</td><td>30382</td>
+    </tr>
+
+    </tbody></table>
+  <br><br><hr><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.606_BUD.4_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.221</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>4</td>
+      <td>SIENKIEWICZA 5/4<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>43,23</td><td>OL1P/00024464/8</td>
+    </tr>
+
+    </tbody></table>
+  <br><br><hr><br></div></div><div id="lok_sekcja_pok9" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja9').style.display='';document.getElementById('lok_sekcja_pok9').style.display='none'">Pokaż lokale<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_9').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.367</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>4 (Grunty gminne)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>MIKOŁAJ MALINOWSKI Rodzice:MARIUSZ,MONIKA<br>KAJKI 9/13; 12-230 BIAŁA PISKA<br><span> PESEL: 08300403976</span></td>
+              <td>Własność</td>
+              <td>2637/36065<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>33428/36065<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/16<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/16</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0469</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0469</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00027671/3</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_10" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8<br></div><br><div id="bud_sekcja10"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok10').style.display='';document.getElementById('bud_sekcja10').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste10">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>609</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 13<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>2.5 / 1</td>
+            <td align="right">97</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.609_BUD &nbsp;&nbsp;(jednostka rej.: G.367)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Powierzchnia wyodrębnionych lokali: </td><td>26,37</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00027671/3</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_10" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>610</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 15<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1.5 / 1</td>
+            <td align="right">127</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.610_BUD &nbsp;&nbsp;(jednostka rej.: G.367)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00027671/3</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_10" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>611</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">61</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.611_BUD &nbsp;&nbsp;(jednostka rej.: G.367)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00027671/3</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_10" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok10" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja10').style.display='';document.getElementById('bud_sekcja_pok10').style.display='none'">Pokaż budynki<br></span><br></div><br><div id="lok_sekcja10"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja_pok10').style.display='';document.getElementById('lok_sekcja10').style.display='none'">Ukryj lokale<br></span><p><b>Informacja o lokalach: </b></p><div id="lok_proste10"><table class="ewopzew"><tbody><tr><td>Id lokalu</td><td>Numer<br>adresowy</td><td>Funkcja użytkowa</td><td>Pole pow. użytk.</td><td>KW</td></tr><tr><td>281601_4.0001.609_BUD.1_LOK</td><td>13/1a</td><td>Mieszkalny</td><td>26,37</td><td>OL1P/00027672/0</td></tr></tbody></table>
+		<span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste10').style.display='none';document.getElementById('lok_pelne10').style.display=''"><br>Pokaż pełną informację o lokalach</span><br></div><div id="lok_pelne10" style="display:none"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste10').style.display='';document.getElementById('lok_pelne10').style.display='none'">Pokaż skróconą informację o lokalach<br></span><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.609_BUD.1_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.222</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>1</td>
+      <td>SIENKIEWICZA 13/1a<br>BIAŁA PISKA</td>
+      <td>Mieszkalny</td>
+      <td>26,37</td><td>OL1P/00027672/0</td>
+    </tr>
+
+    </tbody></table>
+  <br><br><hr><br></div></div><div id="lok_sekcja_pok10" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja10').style.display='';document.getElementById('lok_sekcja_pok10').style.display='none'">Pokaż lokale<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_10').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.345</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7 (Grunty osób fizycznych)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>ALICJA MIECZKOWSKA Rodzice:JANUSZ,BEATA<br>ŻEROMSKIEGO 2/2; 12-230 BIAŁA PISKA<br><span> PESEL: 12262801888</span></td>
+              <td>Własność</td>
+              <td>1/2<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>BEATA WERONIKA MIECZKOWSKA Rodzice:STANISŁAW,KRYSTYNA<br>ŻEROMSKIEGO 2; 12-230 BIAŁA PISKA<br><span> PESEL: 74071214862</span></td>
+              <td>Własność</td>
+              <td>1/2<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/18<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/18</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0061</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0061</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00001948/8</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_11" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8,13<br></div><br><div id="bud_sekcja11"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok11').style.display='';document.getElementById('bud_sekcja11').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste11">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>603</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 4<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki transportu i łączności</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">24</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.603_BUD &nbsp;&nbsp;(jednostka rej.: G.345)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012410/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_11" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok11" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja11').style.display='';document.getElementById('bud_sekcja_pok11').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_11').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.290</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>4 (Grunty gminne)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/19<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/19</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 4</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0336</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0336</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00012410/8</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_12" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8,13<br></div><br><div id="bud_sekcja12"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok12').style.display='';document.getElementById('bud_sekcja12').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste12">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>601</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 4<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1.5 / &nbsp;</td>
+            <td align="right">141</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.601_BUD &nbsp;&nbsp;(jednostka rej.: G.290)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012410/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_12" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rok budowy: 1942<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>602</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 4<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">46</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.602_BUD &nbsp;&nbsp;(jednostka rej.: G.290)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012410/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_12" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok12" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja12').style.display='';document.getElementById('bud_sekcja_pok12').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_12').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.792</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7 (Grunty osób fizycznych)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>ZBIGNIEW LIPIŃSKI Rodzice:STANISŁAW,ZOFIA<br>SIENKIEWICZA 1/2; 12-230 BIAŁA PISKA<br><span> PESEL: 80121114956</span></td>
+              <td>Własność</td>
+              <td>8526/18653<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>(małżeństwo)<br>STANISŁAW GALANTY Rodzice:STANISŁAW,STANISŁAWA<br>ZALESIE 30/1; 12-230 BIAŁA PISKA<br><span> PESEL: 59120814013</span><br><br>ELŻBIETA GALANTY Rodzice:STANISŁAW,IRENA<br>ZALESIE 30/1; 12-230 BIAŁA PISKA<br><span> PESEL: 64100701968</span></td>
+              <td>Własność</td>
+              <td>6873/18653<br>
+            </td></tr>
+         
+            <tr>
+              <td>3</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>3254/18653<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/20<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/20</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 1</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0410</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0410</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00039553/7</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_13" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8,13<br></div><br><div id="bud_sekcja13"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok13').style.display='';document.getElementById('bud_sekcja13').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste13">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>612</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA 1</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">127</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.612_BUD &nbsp;&nbsp;(jednostka rej.: G.792)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Powierzchnia wyodrębnionych lokali: </td><td>111,30</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_13" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rejestr zabytków: A-74/S<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>614</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">47</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.614_BUD &nbsp;&nbsp;(jednostka rej.: G.792)</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_13" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>615</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">30</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.615_BUD &nbsp;&nbsp;(jednostka rej.: G.792)</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_13" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>616</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">8</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.616_BUD &nbsp;&nbsp;(jednostka rej.: G.792)</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_13" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok13" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja13').style.display='';document.getElementById('bud_sekcja_pok13').style.display='none'">Pokaż budynki<br></span><br></div><br><div id="lok_sekcja13"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja_pok13').style.display='';document.getElementById('lok_sekcja13').style.display='none'">Ukryj lokale<br></span><p><b>Informacja o lokalach: </b></p><div id="lok_proste13"><table class="ewopzew"><tbody><tr><td>Id lokalu</td><td>Numer<br>adresowy</td><td>Funkcja użytkowa</td><td>Pole pow. użytk.</td><td>KW</td></tr><tr><td>281601_4.0001.612_BUD.2_LOK</td><td>1/2</td><td>Mieszkalny</td><td>59,98</td><td>OL1P/00039554/4</td></tr><tr><td>281601_4.0001.612_BUD.1_LOK</td><td>1/1</td><td>Mieszkalny</td><td>51,32</td><td>OL1P/00039630/1</td></tr></tbody></table>
+		<span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste13').style.display='none';document.getElementById('lok_pelne13').style.display=''"><br>Pokaż pełną informację o lokalach</span><br></div><div id="lok_pelne13" style="display:none"><span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_proste13').style.display='';document.getElementById('lok_pelne13').style.display='none'">Pokaż skróconą informację o lokalach<br></span><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.612_BUD.2_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.669</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>2</td>
+      <td>SIENKIEWICZA 1/2</td>
+      <td>Mieszkalny</td>
+      <td>59,98</td><td>OL1P/00039554/4</td>
+    </tr>
+
+    </tbody></table>
+  Pomieszczenia przynależne:<br>&nbsp;&nbsp;&nbsp;Liczba innych pomieszczeń: 2<br>&nbsp;&nbsp;&nbsp;Łączna powierzchnia pomieszczeń przynależnych: 25,28 m2<br><br><hr><br>
+  <table border="0">
+    <tbody><tr>
+      <td align="left">Identyfikator lokalu :</td>
+      <td>281601_4.0001.612_BUD.1_LOK</td>
+    </tr>
+    <tr>
+      <td align="left">Jednostka rejestrowa :</td>
+      <td>L.671</td>
+    </tr>
+  </tbody></table>
+  <br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr ewid. lokalu</td>
+      <td>Adres</td>
+      <td>Funkcja użytkowa</td>
+      <td>Pole pow. użytk.</td>
+      <td>KW</td>
+    </tr>
+
+    <tr valign="top">
+      <td>1</td>
+      <td>SIENKIEWICZA 1/1</td>
+      <td>Mieszkalny</td>
+      <td>51,32</td><td>OL1P/00039630/1</td>
+    </tr>
+
+    </tbody></table>
+  Pomieszczenia przynależne:<br>&nbsp;&nbsp;&nbsp;Liczba innych pomieszczeń: 1<br>&nbsp;&nbsp;&nbsp;Łączna powierzchnia pomieszczeń przynależnych: 17,41 m2<br><br><hr><br></div></div><div id="lok_sekcja_pok13" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('lok_sekcja13').style.display='';document.getElementById('lok_sekcja_pok13').style.display='none'">Pokaż lokale<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_13').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.290</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>4 (Grunty gminne)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>GMINA BIAŁA PISKA<br>PLAC ADAMA MICKIEWICZA 25; 12-230 BIAŁA PISKA<br> REGON: 000527919 NIP: 849-10-48-752</td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>162/21<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.162/21</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,1261</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,1261</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00012410/8</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_14" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8,13<br></div><br><div id="bud_sekcja14"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok14').style.display='';document.getElementById('bud_sekcja14').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste14">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>613</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">20</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.613_BUD &nbsp;&nbsp;(jednostka rej.: G.290)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012410/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_14" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>617</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">92</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.617_BUD &nbsp;&nbsp;(jednostka rej.: G.290)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012410/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_14" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>618</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">20</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.618_BUD &nbsp;&nbsp;(jednostka rej.: G.290)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012410/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_14" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>619</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">153</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.619_BUD &nbsp;&nbsp;(jednostka rej.: G.290)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00012410/8</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_14" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>604</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>SIENKIEWICZA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">33</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.604_BUD &nbsp;&nbsp;(jednostka rej.: G.290)</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_14" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rok budowy: 1942<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok14" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja14').style.display='';document.getElementById('bud_sekcja_pok14').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_14').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div><div class="dzialka_info"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.2073.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> BIAŁA PISKA - MIASTO</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>BIAŁA PISKA</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0001</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 29-12-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.54</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7 (Grunty osób fizycznych)</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>(małżeństwo)<br>KRZYSZTOF RYŻY Rodzice:RYSZARD,GRAŻYNA<br>ŻEROMSKIEGO 8; 12-230 BIAŁA PISKA<br><span> PESEL: 83012117498</span><br><br>MONIKA RYŻY Rodzice:WALDEMAR,ANNA<br>ŻEROMSKIEGO 8; 12-230 BIAŁA PISKA<br><span> PESEL: 83051118043</span></td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>164<br>Id działki :<br><span style="font-size:9pt">281601_4.0001.164</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 8<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>B</td>
+      <td align="right">0,0465</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0465</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00005165/3</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_15" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 8<br></div><br><div id="bud_sekcja15"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok15').style.display='';document.getElementById('bud_sekcja15').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste15">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>620</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 8<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>2.5 / 1</td>
+            <td align="right">82</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.620_BUD &nbsp;&nbsp;(jednostka rej.: G.54)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00005165/3</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_15" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rok budowy: 1972<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>621</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 8<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">8</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.621_BUD &nbsp;&nbsp;(jednostka rej.: G.54)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00005165/3</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_15" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>622</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>ŻEROMSKIEGO 8<br>BIAŁA PISKA</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">81</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281601_4.0001.622_BUD &nbsp;&nbsp;(jednostka rej.: G.54)</td></tr></tbody></table><table class="ewopbez"><tbody><tr><td>Dokumenty: </td><td>OL1P/00005165/3</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_15" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>
+				  </div></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok15" style="display:none"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja15').style.display='';document.getElementById('bud_sekcja_pok15').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_15').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-12-29</div></div></div><br>
+<div class="noprint" align="center">
+<div><input type="button" class="my_button ui-button ui-widget ui-state-default ui-corner-all" value="Wydrukuj na osobnych stronach" onclick="print2v(true)" role="button" aria-disabled="false" style="padding: 1px 0.3em;"></div>
+		<div style="margin-top:8px"><input type="button" class="my_button ui-button ui-widget ui-state-default ui-corner-all" value="Wydruk ciągły" onclick="print2v(false)" role="button" aria-disabled="false" style="padding: 1px 0.3em;"></div></div>
+
+
+</body></html>

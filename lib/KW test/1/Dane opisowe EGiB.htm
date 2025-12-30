@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<!-- DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" -->
+<html><head>
+   <title>
+      Dane opisowe EGiB
+   </title>
+   <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+	<link rel="stylesheet" href="Dane%20opisowe%20EGiB_pliki/osrodek.css">
+	<link type="text/css" rel="stylesheet" href="Dane%20opisowe%20EGiB_pliki/jquery-ui.css">
+	<link type="text/css" rel="stylesheet" href="Dane%20opisowe%20EGiB_pliki/ts-style.css">
+	
+	<script type="text/javascript" src="Dane%20opisowe%20EGiB_pliki/jquery.js"></script>
+	<script type="text/javascript" src="Dane%20opisowe%20EGiB_pliki/jquery-ui-all.js"></script>
+
+	<style>
+		table.listadz{
+			font-size:11pt;
+			border-width: 2px;
+			border-spacing: 2px;
+			border-style: outset;
+			border-color: gray;
+			border-collapse: collapse;
+		}
+		table.listadz td {
+			border-width: 1px;
+			border-style: inset;
+			border-color: gray;
+			padding:4px 0.8em;
+		}	
+		div.srodek_zewn{
+			text-align:center;
+		}
+		div.srodek_wewn{
+			display:inline-block;
+			text-align:left;
+		}
+		.dzialka_info{
+			border:2px solid black;
+			margin-bottom:2px;
+			padding:1px;
+		}
+		@media print {
+			div.srodek_wewn{
+				display:block;
+			}
+			.dzialka_info2:not(:last-child){
+				page-break-inside:avoid;
+				page-break-after:always;
+			}
+			.dzialka_info2{
+				border-style:none;
+			}
+		}
+		
+	</style>
+	<script>
+	$(document).ready(function () {
+		$("#div_zaz").show();
+		$( ".my_button" ).button().css("padding", "1px 0.3em");
+	})
+	function pobierz_dane(){
+		var jest=false;
+		var dz='';
+		$('.lisdz').each(function (){
+			if ($(this).prop('checked')){
+				jest=true;
+				dz+=(dz=='' ? '' : '#')+$(this).val();
+			}
+		});
+		if (! jest){
+			alert('Wybierz działkę lub działki');
+			return;
+		}
+		$('#DZIALKI').val(dz);
+		
+		document.getElementById('formatka').submit();
+	}
+	function zaznacz_odznacz(jak){
+		$('.lisdz').each(function (){
+			$(this).prop('checked', jak);
+		});
+	
+	}
+	
+	function print2v(podzial){
+		if (podzial)
+			$('.dzialka_info').addClass('dzialka_info2');
+		else
+			$('.dzialka_info').removeClass('dzialka_info2');
+	  window.print();
+	}
+	
+	</script>
+</head>
+<body>
+<div class="srodek_zewn">
+				<div class="srodek_wewn"><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.288</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>ALEKSANDRA BUCZYŃSKA Rodzice:TOMASZ,EWA<br>WIARTEL 25/13; 12-200 PISZ<br><span> PESEL: 99011000509</span></td>
+              <td>Własność</td>
+              <td>1/24<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>KAROL KLISIATYS Rodzice:JAROSŁAW,ILONA<br>POGOBIE ŚREDNIE 22; 12-200 PISZ<br><span> PESEL: 86061512894</span></td>
+              <td>Własność</td>
+              <td>1/12<br>
+            </td></tr>
+         
+            <tr>
+              <td>3</td>
+              <td>KRZYSZTOF NIKIEL Rodzice:EUGENIUSZ,WANDA<br>POGOBIE ŚREDNIE 37; 12-200 PISZ<br><span> PESEL: 69122401139</span></td>
+              <td>Własność</td>
+              <td>1/12<br>
+            </td></tr>
+         
+            <tr>
+              <td>4</td>
+              <td>JANUSZ PIANKOWSKI Rodzice:JÓZEF,TERESA<br>POGOBIE ŚREDNIE 4; 12-200 PISZ<br><span> PESEL: 69022105375</span></td>
+              <td>Własność</td>
+              <td>7/12<br>
+            </td></tr>
+         
+            <tr>
+              <td>5</td>
+              <td>PRZEMYSŁAW PIANKOWSKI Rodzice:MIROSŁAW,IWONA<br>POGOBIE ŚREDNIE 6C; 12-200 PISZ<br><span> PESEL: 00222802370</span></td>
+              <td>Własność</td>
+              <td>1/12<br>
+            </td></tr>
+         
+            <tr>
+              <td>6</td>
+              <td>JAKUB RYDZEWSKI Rodzice:ADAM,EWA<br>MORZYCZYN-WŁÓKI 40; 07-140 SADOWNE<br><span> PESEL: 96042508916</span></td>
+              <td>Własność</td>
+              <td>1/24<br>
+            </td></tr>
+         
+            <tr>
+              <td>7</td>
+              <td>(małżeństwo)<br>MARCIN DOBROWOLSKI Rodzice:ZYGMUNT,GRAŻYNA<br>DWORCOWA 11A/10; 12-200 PISZ<br><span> PESEL: 77021601099</span><br><br>MARLENA DOBROWOLSKA Rodzice:WITOLD,KRYSTYNA<br>DWORCOWA 11A/10; 12-200 PISZ<br><span> PESEL: 80090714021</span></td>
+              <td>Własność</td>
+              <td>1/12<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>65/23<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.65/23</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>RVI</td>
+      <td align="right">0,0932</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,0932</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00045820/5</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_1" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 1<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_1').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.290</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>KRZYSZTOF NIKIEL Rodzice:EUGENIUSZ,WANDA<br>POGOBIE ŚREDNIE 37; 12-200 PISZ<br><span> PESEL: 69122401139</span></td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>65/28<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.65/28</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>Bp</td>
+      <td align="right">0,0909</td>
+    </tr>
+    
+    <tr>
+      <td>LsVI</td>
+      <td align="right">0,0091</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,1000</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00046443/5</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_2" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 1<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_2').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.114</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>JANUSZ PIANKOWSKI Rodzice:JÓZEF,TERESA<br>POGOBIE ŚREDNIE 4; 12-200 PISZ<br><span> PESEL: 69022105375</span></td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>65/29<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.65/29</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>LsVI</td>
+      <td align="right">0,0182</td>
+    </tr>
+    
+    <tr>
+      <td>RVI</td>
+      <td align="right">0,8105</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,8287</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00007248/3</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_3" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 1<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_3').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.303</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>ALEKSANDRA BUCZYŃSKA Rodzice:TOMASZ,EWA<br>WIARTEL 25/13; 12-200 PISZ<br><span> PESEL: 99011000509</span></td>
+              <td>Własność</td>
+              <td>1/2<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>JAKUB RYDZEWSKI Rodzice:ADAM,EWA<br>MORZYCZYN-WŁÓKI 40; 07-140 SADOWNE<br><span> PESEL: 96042508916</span></td>
+              <td>Własność</td>
+              <td>1/2<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>65/30<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.65/30</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>RVI</td>
+      <td align="right">0,1000</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,1000</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00048878/7</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_4" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 1<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_4').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.102</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>SZYMON BUGNACKI Rodzice:STANISŁAW,TERESA<br>POGOBIE ŚREDNIE 29; 12-200 PISZ<br><span> PESEL: 78121915332</span></td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>67/1<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.67/1</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>N</td>
+      <td align="right">0,0300</td>
+    </tr>
+    
+    <tr>
+      <td>RVI</td>
+      <td align="right">0,2800</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,3100</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00004302/9</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_5" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 1<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_5').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.12</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>(małżeństwo)<br>KRZYSZTOF JAKSINA Rodzice:EDWARD,WIESŁAWA<br>POGOBIE ŚREDNIE 7; 12-200 PISZ<br><span> PESEL: 73013015772</span><br><br>MAŁGORZATA JAKSINA Rodzice:STANISŁAW,IRENA<br>POGOBIE ŚREDNIE 7; 12-200 PISZ<br><span> PESEL: 79070415566</span></td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>69/1<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.69/1</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>RVI</td>
+      <td align="right">0,9300</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,9300</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00007253/1</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_6" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 1<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_6').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.114</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>7</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>JANUSZ PIANKOWSKI Rodzice:JÓZEF,TERESA<br>POGOBIE ŚREDNIE 4; 12-200 PISZ<br><span> PESEL: 69022105375</span></td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>70/1<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.70/1</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>RVI</td>
+      <td align="right">0,3900</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,3900</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00007248/3</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_7" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 1<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_7').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.175</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>1</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>SKARB PAŃSTWA</td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>PAŃSTWOWE GOSPODARSTWO LEŚNE LASY PAŃSTWOWE NADLEŚNICTWO PISZ<br>GDAŃSKA 24; 12-200 PISZ<br> REGON: 790011285</td>
+              <td>Zarząd</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>85/5<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.85/5</span></td><td><table class="ewopbez"></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>Ls</td>
+      <td align="right">11,6400</td>
+    </tr>
+    
+    <tr>
+      <td>Lz</td>
+      <td align="right">2,2700</td>
+    </tr>
+    
+    <tr>
+      <td>N</td>
+      <td align="right">16,7200</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">30,6300</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00021460/9</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_8" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 11<br></div><br><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_8').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div><div class="dzialka_info dzialka_info2"><p align="center">Informacja
+ z opisowych danych ewidencji gruntów i budynków udostępniona jednostce 
+wykonawstwa geodezyjnego w związku ze zgłoszeniem pracy geodezyjnej 
+zarejestrowanej pod numerem: G.6642.1.1765.2025</p><style type="text/css">
+.rozp2016{
+	color:#BF0000;
+	display:none;
+}
+.rozp2016d{
+	color:#BF0000;
+}
+.info_rozp2016{color:#BF0000;
+	cursor: pointer;
+}
+.info_rozp2016:hover {
+    text-decoration: underline;
+}
+table.ewopzew{
+	font-size:10pt;
+	border-width: 2px;
+	border-spacing: 2px;
+	border-style: outset;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.ewopzew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopwew{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+table.ewopwew td {
+	border-width: 1px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+
+table.ewopbez{
+	font-size:10pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopbez td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+table.ewopisbezm{
+	font-size:9pt;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+table.ewopisbezm td {
+	border-width: 0px;
+	border-style: inset;
+	border-color: gray;
+	padding:2px 0.5em;
+}
+@media print {
+ .ewopnoprint {display: none;}
+}
+@media screen {
+ .ewopnoscreen {display: none;}
+}
+
+</style>
+  <table border="0" width="100%">
+    <tbody><tr>
+      <td align="right" width="60%">Województwo :</td>
+      <td>Warmińsko-Mazurskie</td>
+    </tr>
+    <tr>
+      <td align="right">Powiat :</td>
+      <td>Piski</td>
+    </tr>
+    <tr>
+      <td align="right">Jednostka ewidencyjna :</td>
+      <td> PISZ - obszar wiejski</td>
+    </tr>
+    <tr>
+      <td align="right">Nazwa obrębu :</td>
+      <td>POGOBIE ŚREDNIE</td>
+    </tr>
+	 <tr>
+      <td align="right">Numer obrębu :</td>
+      <td>0023</td>
+    </tr>
+  </tbody></table>
+  
+    <br>
+    <b></b><center><b><big>INFORMACJA O DZIAŁCE
+    </big></b></center>
+    <center>z dnia: 27-11-2025
+    </center>
+    <br>
+    
+  <table border="0">
+    <tbody><tr>
+      <td>Jednostka rejestrowa :</td>
+      <td>G.175</td>
+    </tr>
+	 <tr><td>Grupa rejestrowa :</td><td>1</td></tr>
+  </tbody></table>
+  <br><table class="ewopzew">
+          <tbody><tr>
+            <td>Lp</td>
+            <td>Podmiot ewidencyjny</td>
+            <td>Charakter<br>własności/władania</td>
+            <td>Udział<br>
+          </td></tr>
+       
+            <tr>
+              <td>1</td>
+              <td>SKARB PAŃSTWA</td>
+              <td>Własność</td>
+              <td>1/1<br>
+            </td></tr>
+         
+            <tr>
+              <td>2</td>
+              <td>PAŃSTWOWE GOSPODARSTWO LEŚNE LASY PAŃSTWOWE NADLEŚNICTWO PISZ<br>GDAŃSKA 24; 12-200 PISZ<br> REGON: 790011285</td>
+              <td>Zarząd</td>
+              <td>1/1<br>
+            </td></tr>
+         </tbody></table><br>
+  <table class="ewopzew">
+    <tbody><tr align="center">
+      <td>Nr działki</td>
+      <td>Położenie działki</td>
+      <td>Klasoużytki</td>
+      <td>Pow. działki[ha]</td><td>Dokumenty</td></tr>
+
+    <tr valign="top">
+      <td>98/18<br>Id działki :<br><span style="font-size:9pt">281603_5.0023.98/18</span></td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>POGOBIE ŚREDNIE 5 A</td>
+      </tr>
+    </tbody></table></td><td>
+	  <table class="ewopwew">
+	  <tbody><tr>
+		 <td>Oznaczenie</td>
+		 <td>Pow.</td>
+	  </tr>
+	  
+    <tr>
+      <td>Ls</td>
+      <td align="right">0,4755</td>
+    </tr>
+    
+    <tr>
+      <td>RVI</td>
+      <td align="right">0,4261</td>
+    </tr>
+    
+  </tbody></table>
+  </td>
+      <td align="right">0,9016</td><td><table class="ewopbez">
+      <tbody><tr>
+        <td>OL1P/00021460/9</td>
+      </tr>
+    </tbody></table></td></tr></tbody></table><div class="rozp2016 rozp2016_9" style="margin-top:6px;margin-left:8px">
+	  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>Arkusz: 3<br></div><br><div id="bud_sekcja9" style="display: none;"> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja_pok9').style.display='';document.getElementById('bud_sekcja9').style.display='none'">Ukryj budynki<br></span><p><b>Informacja o budynkach:</b></p>
+		<div id="bud_proste9">
+      <table class="ewopzew">
+          <tbody><tr align="center">
+              <td>Nr ewid. bud</td>
+              <td>Adres</td>
+              <td align="left">Rodzaj wg KŚT</td>
+              <td>Kondyg.<br>n / p</td>
+              <td>Pow. zabud.</td></tr>
+      
+        <tr>
+            <td>128</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>POGOBIE ŚREDNIE 5 A</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki mieszkalne</td>
+            <td>1.5 / 1</td>
+            <td align="right">138</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281603_5.0023.128_BUD &nbsp;&nbsp;(jednostka rej.: G.175)</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_9" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rok budowy: 1935<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>129</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>POGOBIE ŚREDNIE</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki produkcyjne usługowe i gospodarcze dla rolnictwa</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">37</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281603_5.0023.129_BUD &nbsp;&nbsp;(jednostka rej.: G.175)</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_9" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rok budowy: 2007<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>130</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>POGOBIE ŚREDNIE</td>
+      </tr>
+    </tbody></table></td>
+            <td>Budynki produkcyjne usługowe i gospodarcze dla rolnictwa</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">35</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281603_5.0023.130_BUD &nbsp;&nbsp;(jednostka rej.: G.175)</td></tr></tbody></table>
+				  <div class="rozp2016 rozp2016_9" style="margin-left:8px;">
+				  <div class="ewopnoscreen">Wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r.:</div>
+					 Materiał ścian: Mur<br>Rok budowy: 2007<br>
+				  </div></td>
+			  </tr>
+        <tr>
+            <td>131</td>
+            <td><table class="ewopbez">
+      <tbody><tr>
+        <td>POGOBIE ŚREDNIE</td>
+      </tr>
+    </tbody></table></td>
+            <td>Pozostałe budynki niemieszkalne</td>
+            <td>1 / &nbsp;</td>
+            <td align="right">86</td></tr>
+			  <tr>
+					<td colspan="1">&nbsp;</td>
+					<td colspan="5"><table class="ewopbez"><tbody><tr><td>Id. budynku: </td><td>281603_5.0023.131_BUD &nbsp;&nbsp;(jednostka rej.: G.175)</td></tr></tbody></table></td>
+			  </tr>
+      </tbody></table>
+		</div></div><div id="bud_sekcja_pok9" style=""> <span class="ewopnoprint" style="color:blue;cursor:pointer" onclick="document.getElementById('bud_sekcja9').style.display='';document.getElementById('bud_sekcja_pok9').style.display='none'">Pokaż budynki<br></span><br></div><br><div class="noprint info_rozp2016" onclick="$('.rozp2016_9').toggle()">Pokaż/ukryj wybrane dane EGiB aktualizowane do dnia 31 lipca 2021r. </div><br>Sporządził: Andrzej Dąbrowski Agencja Geodezyjna, dnia: 2025-11-27</div></div></div><br>
+<div class="noprint" align="center">
+<div><input type="button" class="my_button ui-button ui-widget ui-state-default ui-corner-all" value="Wydrukuj na osobnych stronach" onclick="print2v(true)" role="button" aria-disabled="false" style="padding: 1px 0.3em;"></div>
+		<div style="margin-top:8px"><input type="button" class="my_button ui-button ui-widget ui-state-default ui-corner-all" value="Wydruk ciągły" onclick="print2v(false)" role="button" aria-disabled="false" style="padding: 1px 0.3em;"></div></div>
+
+
+</body></html>

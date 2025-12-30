@@ -46,6 +46,7 @@ public class ProcessFile {
 	
 	public ProcessFile(Path file) {
 		this.loadedFile = file;
+		
 	}
 	
 	/*
@@ -83,18 +84,24 @@ public class ProcessFile {
 	
 	boolean run() {
 		BufferedWriter writer;
-		FieldData fieldData = null;
+		FieldData fieldData = new FieldData();
+		boolean newField = false;
 		try {
 			tempFile = Files.createTempFile("tempProcessFile", ".txt");
 			writer = Files.newBufferedWriter(tempFile, Charset.defaultCharset());
 			org.jsoup.nodes.Document doc = Jsoup.parse(this.loadedFile, null);
 			org.jsoup.select.Elements tbodys = doc.select("tbody");
+			int index=0;
 			for(org.jsoup.nodes.Element tbody : tbodys){
 				org.jsoup.select.Elements trows = tbody.select("tr");
-				int index = 0;
+				if(tbody.text().contains("Lp")){
+					System.out.println("I'm in "+index);
+					fieldData = new FieldData();
+					newField = true;
+					index++;
+				}
 				for(org.jsoup.nodes.Element trow : trows){
-					if(trow.text().contains("Lp")){
-						fieldData = new FieldData();
+					if(trow.text().contains("Lp") && newField){
 						for(int i=1; i<trows.size(); i++){
 							org.jsoup.nodes.Element tData = trows.get(i);
 							fieldData.setOwnersList(new ArrayList<String>(Arrays.asList(tData.text().split(" "))));
@@ -102,10 +109,11 @@ public class ProcessFile {
 							//System.out.println(tData.text());
 							writer.write(tData.text()+"\n");
 							writer.flush();
-							index++;
+
 						}
 					}
-					if(trow.text().contains("Nr dzia³ki")){
+					
+					if(trow.text().contains("Nr dzia³ki") && newField){
 						org.jsoup.select.Elements tcolumn = trows.get(1).select("td");
 						ArrayList<String> fieldNameList = new ArrayList<String>(Arrays.asList(tcolumn.get(0).text().split(" ")));
 						fieldData.setFieldNumber(fieldNameList.get(0));
@@ -116,18 +124,17 @@ public class ProcessFile {
 						writer.write(tcolumn.get(0).text()+"\n");
 						writer.write("KW "+tcolumn.get(tcolumn.size()-1).text()+"\n\n");
 						writer.flush();
+						newField=false;
 					}
 					
-					if(fieldData != null)
-						listFieldsData.add(fieldData);
-					//System.out.println(trow.text()+"\n");
-					
-				}
 						
+					//System.out.println(trow.text()+"\n");
+				}
+				if(fieldData != null && fieldData.getKW()!= null)
+					listFieldsData.add(fieldData);
 			}
 			
-			for(FieldData data:listFieldsData)
-				System.out.println(data.toString());
+			
 			
 				//for(org.jsoup.nodes.Element trow : trows){
 					
@@ -159,6 +166,9 @@ public class ProcessFile {
 			savingFile = saver.getPath();
 			Files.copy(tempFile.toAbsolutePath(), savingFile, REPLACE_EXISTING);
 			Files.delete(tempFile);
+			for(FieldData data:listFieldsData)
+				System.out.println(data.toString());
+			System.out.println("listFieldsData size="+listFieldsData.size());
 			
 		} catch (FileNotFoundException e) {
 			displayErrorFrame(e.toString());
