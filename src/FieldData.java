@@ -42,6 +42,10 @@ public void setOwnersList(ArrayList<String> ownersList) {
 	this.OwnersList = ownersList;
 }
 
+public void addOwner(String name) {
+	this.OwnersList.add(name);
+}
+
 public String getKW() {
 	return KW;
 }

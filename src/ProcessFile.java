@@ -101,9 +101,23 @@ public class ProcessFile {
 						if(trow.text().contains("Lp")){
 							for(int i=1; i<trows.size(); i++){
 								org.jsoup.nodes.Element tData = trows.get(i);
+								String[] firstLine = tData.select("td").get(1).toString().split(";");
+								
+								// get Name for individual people
+								if(firstLine[0].contains("Rodzice")) {
+									String[] nameList = firstLine[0].split("Rodzice");
+									String nameRaw = nameList[0].subSequence(4, nameList[0].length()-1).toString();
+									//System.out.println("Name "+nameRaw);
+									fieldData.addOwner(nameRaw);
+								}
+								
+								if(firstLine[0].contains("ma³¿eñstwo")) {
+									
+								}
+								
 								//fieldData.setOwnersList(new ArrayList<String>(Arrays.asList(tData.text().split(" "))));
 								//fieldData.setOwnersList(getNamesAndShares(new ArrayList<String>(Arrays.asList(tData.text().split(" ")))));
-								System.out.println(index+" "+tData.toString());
+								//System.out.println(index+" "+firstLine[0]);
 								writer.write(tData.text()+"\n");
 								writer.flush();
 							}
