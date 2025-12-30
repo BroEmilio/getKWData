@@ -85,7 +85,6 @@ public class ProcessFile {
 	boolean run() {
 		BufferedWriter writer;
 		FieldData fieldData = new FieldData();
-		boolean newField = false;
 		try {
 			tempFile = Files.createTempFile("tempProcessFile", ".txt");
 			writer = Files.newBufferedWriter(tempFile, Charset.defaultCharset());
@@ -93,46 +92,44 @@ public class ProcessFile {
 			org.jsoup.select.Elements tbodys = doc.select("tbody");
 			int index=0;
 			for(org.jsoup.nodes.Element tbody : tbodys){
-				org.jsoup.select.Elements trows = tbody.select("tr");
 				if(tbody.text().contains("Lp")){
-					System.out.println("I'm in "+index);
+					//System.out.println("I'm in "+index);
 					fieldData = new FieldData();
-					newField = true;
 					index++;
-				}
-				for(org.jsoup.nodes.Element trow : trows){
-					if(trow.text().contains("Lp") && newField){
-						for(int i=1; i<trows.size(); i++){
-							org.jsoup.nodes.Element tData = trows.get(i);
-							fieldData.setOwnersList(new ArrayList<String>(Arrays.asList(tData.text().split(" "))));
-							//System.out.println("Index "+index);
-							//System.out.println(tData.text());
-							writer.write(tData.text()+"\n");
-							writer.flush();
-
+					org.jsoup.select.Elements trows = tbody.select("tr");
+					for(org.jsoup.nodes.Element trow : trows){
+						if(trow.text().contains("Lp")){
+							for(int i=1; i<trows.size(); i++){
+								org.jsoup.nodes.Element tData = trows.get(i);
+								//fieldData.setOwnersList(new ArrayList<String>(Arrays.asList(tData.text().split(" "))));
+								//fieldData.setOwnersList(getNamesAndShares(new ArrayList<String>(Arrays.asList(tData.text().split(" ")))));
+								System.out.println(index+" "+tData.toString());
+								writer.write(tData.text()+"\n");
+								writer.flush();
+							}
 						}
 					}
 					
-					if(trow.text().contains("Nr dzia³ki") && newField){
-						org.jsoup.select.Elements tcolumn = trows.get(1).select("td");
-						ArrayList<String> fieldNameList = new ArrayList<String>(Arrays.asList(tcolumn.get(0).text().split(" ")));
-						fieldData.setFieldNumber(fieldNameList.get(0));
-						fieldData.setFieldId(fieldNameList.get(4));
-						fieldData.setKW(tcolumn.get(tcolumn.size()-1).text());
-						//System.out.println(tcolumn.get(0).text());	
-						//System.out.println("KW "+tcolumn.get(tcolumn.size()-1).text()+"\n");
-						writer.write(tcolumn.get(0).text()+"\n");
-						writer.write("KW "+tcolumn.get(tcolumn.size()-1).text()+"\n\n");
-						writer.flush();
-						newField=false;
-					}
-					
-						
-					//System.out.println(trow.text()+"\n");
 				}
-				if(fieldData != null && fieldData.getKW()!= null)
-					listFieldsData.add(fieldData);
-			}
+				
+				if(tbody.text().contains("Nr dzia³ki")){
+						org.jsoup.select.Elements trows = tbody.select("tr");
+							org.jsoup.select.Elements tcolumn = trows.get(1).select("td");
+							ArrayList<String> fieldNameList = new ArrayList<String>(Arrays.asList(tcolumn.get(0).text().split(" ")));
+							fieldData.setFieldNumber(fieldNameList.get(0));
+							fieldData.setFieldId(fieldNameList.get(4));
+							fieldData.setKW(tcolumn.get(tcolumn.size()-1).text());
+							//System.out.println(tcolumn.get(0).text());	
+							//System.out.println("KW "+tcolumn.get(tcolumn.size()-1).text()+"\n");
+							writer.write(tcolumn.get(0).text()+"\n");
+							writer.write("KW "+tcolumn.get(tcolumn.size()-1).text()+"\n\n");
+							writer.flush();
+							if(fieldData != null && fieldData.getKW()!= null)
+								listFieldsData.add(fieldData);
+						
+					}
+				}
+				
 			
 			
 			
@@ -187,6 +184,22 @@ public class ProcessFile {
 				"Wyst¹pi³ b³ad: \r\n"+errorMessege,
 		        "Wyst¹pi³ b³¹d",
 		        JOptionPane.ERROR_MESSAGE);
+	}
+	
+	ArrayList<String> getNamesAndShares(ArrayList<String> stringList) {
+		ArrayList<String> rawData = new ArrayList<String>();
+		//get names
+		int i=2;
+		while(stringList.get(i)=="Rodzice") {
+			rawData.add(stringList.get(i));
+			i++;
+		}
+		//get property
+		rawData.add(stringList.get(stringList.size()-2));
+		//get shares
+		rawData.add(stringList.get(stringList.size()-1));
+		
+		return rawData;
 	}
 	
 }
