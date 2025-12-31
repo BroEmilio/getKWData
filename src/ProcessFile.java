@@ -101,26 +101,36 @@ public class ProcessFile {
 						if(trow.text().contains("Lp")){
 							for(int i=1; i<trows.size(); i++){
 								org.jsoup.nodes.Element tData = trows.get(i);
-								String[] firstLine = tData.select("td").get(1).toString().split(";");
+								String[] lines = tData.select("td").get(1).toString().split(";");
 								
 								// get Name for individual people
-								if(firstLine[0].contains("Rodzice") && ! firstLine[0].contains("ma³¿eñstwo")) {
-									String[] nameList = firstLine[0].split("Rodzice");
+								if(lines[0].contains("Rodzice") && ! lines[0].contains("ma³¿eñstwo")) {
+									String[] nameList = lines[0].split("Rodzice");
 									String nameRaw = nameList[0].subSequence(4, nameList[0].length()-1).toString();
 									//System.out.println("Name "+nameRaw);
 									fieldData.addOwner(nameRaw);
 								}
 								
-								if(firstLine[0].contains("ma³¿eñstwo")) {
+								if(lines[0].contains("ma³¿eñstwo")) {
 									String marriageOwners = "MA£¯. ";
-									String[] nameList = firstLine[0].split("<br>");
-									boolean isSecond = false;
-									for(String currentLine:nameList) {
-										System.out.println("currentLine: "+currentLine);
-										if(currentLine.contains("Rodzice")){
-											String[] nameRaws = currentLine.split("Rodzice");
-											marriageOwners += nameRaws[0]+" i \r\n    ";
-											
+									for(String currentLine:lines) {
+										String[] nameList = currentLine.split("<br>");
+										boolean isSecond = false;
+										for(int j=1; j<nameList.length; j++){
+											if(nameList[j].contains("Rodzice")){
+												String[] nameRaws = currentLine.split("Rodzice");
+												System.out.println("nameRaws:" + nameRaws[0]);
+												marriageOwners += nameRaws[0];
+												System.out.println("marriageOwners "+ marriageOwners);
+											}
+											//System.out.println(j+": "+nameList[j]);
+										/*
+										for(String name1 : nameList){
+											if(name1.contains("Rodzice")){
+												String[] nameRaws = currentLine.split("Rodzice");
+												marriageOwners += nameRaws[0]+" i \r\n    ";
+										}
+										*/
 											/*
 											if(isSecond) {
 												marriageOwners += nameRaw;
@@ -132,13 +142,13 @@ public class ProcessFile {
 											*/
 										}
 									}
-									fieldData.addOwner(marriageOwners);
+									//fieldData.addOwner(marriageOwners);
 								}
 								
 								//fieldData.setOwnersList(new ArrayList<String>(Arrays.asList(tData.text().split(" "))));
 								//fieldData.setOwnersList(getNamesAndShares(new ArrayList<String>(Arrays.asList(tData.text().split(" ")))));
 								//System.out.println(index+" "+firstLine[0]);
-								writer.write(tData.text()+"\n");
+								//writer.write(tData.text()+"\n");
 								writer.flush();
 							}
 						}
