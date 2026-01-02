@@ -89,7 +89,32 @@ public class ProcessFile {
 			tempFile = Files.createTempFile("tempProcessFile", ".txt");
 			writer = Files.newBufferedWriter(tempFile, Charset.defaultCharset());
 			org.jsoup.nodes.Document doc = Jsoup.parse(this.loadedFile, null);
-			org.jsoup.select.Elements tbodys = doc.select("tbody");
+			org.jsoup.select.Elements tbodysOwners = doc.select("tbody:contains(Lp)");
+			org.jsoup.select.Elements tbodysNumbers = doc.select("tbody:contains(Nr dzia³ki)");
+			System.out.println("Owners:"+tbodysOwners.size()+" Numbers"+tbodysNumbers.size());
+			for(int i=0; i<tbodysOwners.size(); i++){
+				//org.jsoup.select.Elements tRows = tbodysOwners.select("tr");
+					//fieldData.setOwnersList(getNamesAndShares2(tRows));
+					
+				
+				//get FieldNumber, FieldId and KW
+				org.jsoup.nodes.Element tbody = tbodysNumbers.get(i);
+				org.jsoup.select.Elements tcolumn = tbody.select("tr").get(1).select("td");
+				//System.out.println(tcolumn.toString());
+				ArrayList<String> fieldNameList = new ArrayList<String>(Arrays.asList(tcolumn.get(0).text().split(" ")));
+				System.out.println(fieldNameList.toString());
+				fieldData.setFieldNumber(fieldNameList.get(0));
+				fieldData.setFieldId(fieldNameList.get(4));
+				fieldData.setKW(tcolumn.get(tcolumn.size()-1).text());
+				if(fieldData != null && fieldData.getKW()!= null)
+					listFieldsData.add(fieldData);
+				
+			}
+			
+			
+			
+			
+			/*
 			int index=0;
 			for(org.jsoup.nodes.Element tbody : tbodys){
 				if(tbody.text().contains("Lp")){
@@ -123,31 +148,11 @@ public class ProcessFile {
 												marriageOwners += nameRaws[0];
 												System.out.println("marriageOwners "+ marriageOwners);
 											}
-											//System.out.println(j+": "+nameList[j]);
-										/*
-										for(String name1 : nameList){
-											if(name1.contains("Rodzice")){
-												String[] nameRaws = currentLine.split("Rodzice");
-												marriageOwners += nameRaws[0]+" i \r\n    ";
-										}
-										*/
-											/*
-											if(isSecond) {
-												marriageOwners += nameRaw;
-											}
-											if(! isSecond) {
-												marriageOwners += nameRaw+" i \r\n    ";
-												isSecond = true;
-											}
-											*/
 										}
 									}
 									//fieldData.addOwner(marriageOwners);
 								}
 								
-								//fieldData.setOwnersList(new ArrayList<String>(Arrays.asList(tData.text().split(" "))));
-								//fieldData.setOwnersList(getNamesAndShares(new ArrayList<String>(Arrays.asList(tData.text().split(" ")))));
-								//System.out.println(index+" "+firstLine[0]);
 								//writer.write(tData.text()+"\n");
 								writer.flush();
 							}
@@ -173,31 +178,10 @@ public class ProcessFile {
 						
 					}
 				}
-				
+				*/
 			
 			
 			
-				//for(org.jsoup.nodes.Element trow : trows){
-					
-					//}
-				
-					
-				//String xxx = tbody.select("tr").text();
-				//System.out.println(xxx+"\n");
-			/*
-		    org.jsoup.select.Elements rows = doc.select("tr");
-		    for(org.jsoup.nodes.Element row :rows)
-		    {
-		        org.jsoup.select.Elements columns = row.select("td");
-		        for (org.jsoup.nodes.Element column:columns)
-		        {
-		        	//System.out.println(column.text());
-		        	writer.write(column.text()+"\n");
-					writer.flush();
-		        }
-		        //System.out.println();
-		    }
-		    */
 			
 			
 		    
@@ -245,5 +229,50 @@ public class ProcessFile {
 		
 		return rawData;
 	}
+	
+	ArrayList<String> getNamesAndShares2(org.jsoup.select.Elements tRows){
+		ArrayList<String> ownersAndSharesList = new ArrayList<String>();
+		for(int i=1; i<tRows.size(); i++){
+			String ownerName = null;
+			org.jsoup.select.Elements tColumns = tRows.get(i).select("td");
+			String longName = tColumns.get(1).toString();
+			longName = longName.substring(4);
+			String[] nameList = longName.split("<br>");
+			if(nameList[0].contains("ma³¿eñstwo")){
+				ownerName += "MA£¯. ";
+				boolean isFirst = true;
+				for(String line:nameList){
+					if(line.contains("Rodzice")){
+						ownerName += getNameIndyvidual(line);
+						if(isFirst){
+							ownerName += "i";
+							isFirst=false;
+						}
+					}
+				}
+			}
+			
+			if(nameList[0].contains("Rodzice")){
+				ownerName += getNameIndyvidual(nameList[0]);
+			} 
+			
+			//if((! nameList[0].contains("Rodzice") && ! nameList[0].contains("ma³¿eñstwo")))
+				//for(int j=0; j<nameList.length; j++){
+					//ownerName += nameList[j].split("<br>")[0];
+			//}	
+			
+		System.out.println(ownerName);
+		}
+		return ownersAndSharesList;
+		
+		
+	}
+	
+	String getNameIndyvidual (String input){
+		String name = null;
+		name = input.split("Rodzice")[0];
+		return name;
+	}
+	
 	
 }
