@@ -84,7 +84,7 @@ public class ProcessFile {
 	
 	boolean run() {
 		BufferedWriter writer;
-		FieldData fieldData = new FieldData();
+		FieldData fieldData = null;
 		try {
 			tempFile = Files.createTempFile("tempProcessFile", ".txt");
 			writer = Files.newBufferedWriter(tempFile, Charset.defaultCharset());
@@ -93,16 +93,17 @@ public class ProcessFile {
 			org.jsoup.select.Elements tbodysNumbers = doc.select("tbody:contains(Nr dzia³ki)");
 			System.out.println("Owners:"+tbodysOwners.size()+" Numbers"+tbodysNumbers.size());
 			for(int i=0; i<tbodysOwners.size(); i++){
-				//org.jsoup.select.Elements tRows = tbodysOwners.select("tr");
-					//fieldData.setOwnersList(getNamesAndShares2(tRows));
+				fieldData = new FieldData();
+				org.jsoup.select.Elements tRows = tbodysOwners.get(i).select("tr");
+				fieldData.setOwnersList(getNamesAndShares2(tRows));
 					
 				
 				//get FieldNumber, FieldId and KW
 				org.jsoup.nodes.Element tbody = tbodysNumbers.get(i);
 				org.jsoup.select.Elements tcolumn = tbody.select("tr").get(1).select("td");
-				//System.out.println(tcolumn.toString());
+				//System.out.println("tc "+tcolumn.toString());
 				ArrayList<String> fieldNameList = new ArrayList<String>(Arrays.asList(tcolumn.get(0).text().split(" ")));
-				System.out.println(fieldNameList.toString());
+				//System.out.println(fieldNameList.toString() +"KW "+tcolumn.get(tcolumn.size()-1).text());
 				fieldData.setFieldNumber(fieldNameList.get(0));
 				fieldData.setFieldId(fieldNameList.get(4));
 				fieldData.setKW(tcolumn.get(tcolumn.size()-1).text());
@@ -232,20 +233,27 @@ public class ProcessFile {
 	
 	ArrayList<String> getNamesAndShares2(org.jsoup.select.Elements tRows){
 		ArrayList<String> ownersAndSharesList = new ArrayList<String>();
+		String ownerName = null;
 		for(int i=1; i<tRows.size(); i++){
-			String ownerName = null;
+			ownerName = "";
 			org.jsoup.select.Elements tColumns = tRows.get(i).select("td");
-			String longName = tColumns.get(1).toString();
+			org.jsoup.nodes.Element tName = tColumns.get(1);
+			//System.out.println("tn "+tName.toString());
+			String longName = tName.toString();
 			longName = longName.substring(4);
+			//System.out.println("s "+longName+" e");
 			String[] nameList = longName.split("<br>");
-			if(nameList[0].contains("ma³¿eñstwo")){
-				ownerName += "MA£¯. ";
+			if(nameList[0].contains("ma³¿eñstwo")) {
+				ownerName +="MA£¯.";
 				boolean isFirst = true;
 				for(String line:nameList){
 					if(line.contains("Rodzice")){
-						ownerName += getNameIndyvidual(line);
+						String nameMeriage = getNameIndyvidual(line);
+						nameMeriage = nameMeriage.substring(1);
+						ownerName += nameMeriage;
 						if(isFirst){
-							ownerName += "i";
+							//System.out.println("I'm in"+nameList.length);
+							ownerName += "i \n    ";
 							isFirst=false;
 						}
 					}
@@ -256,16 +264,18 @@ public class ProcessFile {
 				ownerName += getNameIndyvidual(nameList[0]);
 			} 
 			
-			//if((! nameList[0].contains("Rodzice") && ! nameList[0].contains("ma³¿eñstwo")))
+			//if((! nameList[0].contains("Rodzice") && ! nameList[0].contains("ma³¿eñstwo"))) {
 				//for(int j=0; j<nameList.length; j++){
 					//ownerName += nameList[j].split("<br>")[0];
-			//}	
+				//}
+			//}
 			
-		System.out.println(ownerName);
+			System.out.println(ownerName);
+			ownersAndSharesList.add(ownerName);
 		}
+		
+		
 		return ownersAndSharesList;
-		
-		
 	}
 	
 	String getNameIndyvidual (String input){
