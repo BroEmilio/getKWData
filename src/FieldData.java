@@ -57,8 +57,14 @@ public void setKW(String kW) {
 
 @Override
 public String toString() {
-	return "FieldData [id=" + id + ", FieldId=" + FieldId + ", FieldNumber="
-			+ FieldNumber + ", OwnersList=" + OwnersList + ", KW=" + KW + "]\n";
+	String output = "";
+	output = FieldNumber +" - " + FieldId + "\r\n";
+	for(Owner owner:OwnersList) {
+		output += owner.toString() +"\r\n";
+	}
+	output += "KW "+ KW +"\r\n\r\n";
+	
+	return output;
 }
 
 

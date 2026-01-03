@@ -95,22 +95,24 @@ public class ProcessFile {
 			for(int i=0; i<tbodysOwners.size(); i++){
 				fieldData = new FieldData();
 				org.jsoup.select.Elements tRows = tbodysOwners.get(i).select("tr");
-				fieldData.setOwnersList(getNamesAndShares2(tRows));
-					
+				fieldData.setOwnersList(getNamesAndParticipations(tRows));
 				
 				//get FieldNumber, FieldId and KW
 				org.jsoup.nodes.Element tbody = tbodysNumbers.get(i);
 				org.jsoup.select.Elements tcolumn = tbody.select("tr").get(1).select("td");
-				//System.out.println("tc "+tcolumn.toString());
-								
 				ArrayList<String> fieldNameList = new ArrayList<String>(Arrays.asList(tcolumn.get(0).text().split(" ")));
-				//System.out.println(fieldNameList.toString() +"KW "+tcolumn.get(tcolumn.size()-1).text());
 				fieldData.setFieldNumber(fieldNameList.get(0));
 				fieldData.setFieldId(fieldNameList.get(4));
 				fieldData.setKW(tcolumn.get(tcolumn.size()-1).text());
 				if(fieldData != null && fieldData.getKW()!= null)
 					listFieldsData.add(fieldData);
-				
+				//writer.write(fieldData.toString());
+				//writer.flush();
+			}
+			
+			for(FieldData data:listFieldsData) {
+				writer.write(data.toString());
+				writer.flush();
 			}
 			
 			
@@ -193,9 +195,7 @@ public class ProcessFile {
 			savingFile = saver.getPath();
 			Files.copy(tempFile.toAbsolutePath(), savingFile, REPLACE_EXISTING);
 			Files.delete(tempFile);
-			for(FieldData data:listFieldsData)
-				System.out.println(data.toString());
-			System.out.println("listFieldsData size="+listFieldsData.size());
+			
 			
 		} catch (FileNotFoundException e) {
 			displayErrorFrame(e.toString());
@@ -216,23 +216,8 @@ public class ProcessFile {
 		        JOptionPane.ERROR_MESSAGE);
 	}
 	
-	ArrayList<String> getNamesAndShares(ArrayList<String> stringList) {
-		ArrayList<String> rawData = new ArrayList<String>();
-		//get names
-		int i=2;
-		while(stringList.get(i)=="Rodzice") {
-			rawData.add(stringList.get(i));
-			i++;
-		}
-		//get property
-		rawData.add(stringList.get(stringList.size()-2));
-		//get shares
-		rawData.add(stringList.get(stringList.size()-1));
-		
-		return rawData;
-	}
 	
-	ArrayList<Owner> getNamesAndShares2(org.jsoup.select.Elements tRows){
+	ArrayList<Owner> getNamesAndParticipations(org.jsoup.select.Elements tRows){
 		ArrayList<Owner> ownersAndSharesList = new ArrayList<Owner>();
 		Owner owner = null;
 		String ownerName = null;
@@ -243,11 +228,11 @@ public class ProcessFile {
 			ownerName = "";
 			String ownershipType = tColumns.get(2).text();
 			String participation = tColumns.get(3).text();
-			//System.out.println("tn "+tName.toString());
 			String longName = tName.toString();
 			longName = longName.substring(4);
-			//System.out.println("s "+longName+" e");
 			String[] nameList = longName.split("<br>");
+			
+			// get marriage names
 			if(nameList[0].contains("ma³¿eñstwo")) {
 				ownerName +="MA£¯.";
 				boolean isFirst = true;
@@ -257,7 +242,6 @@ public class ProcessFile {
 						nameMeriage = nameMeriage.substring(1);
 						ownerName += nameMeriage;
 						if(isFirst){
-							//System.out.println("I'm in"+nameList.length);
 							ownerName += "i \n    ";
 							isFirst=false;
 						}
@@ -265,31 +249,27 @@ public class ProcessFile {
 				}
 			}
 			
+			// get individual person name
 			if(nameList[0].contains("Rodzice")){
 				ownerName += getNameIndyvidual(nameList[0]);
 			} else
+				// get institutions names
 				if(! nameList[0].contains("ma³¿eñstwo")) {
 					String nameInstitution = "";
-					nameInstitution = tName.select("td").get(0).text();
-					if(nameInstitution.contains("<br>")) {
-						nameInstitution = nameInstitution.split("<br>")[0];
-					}
-					System.out.println("tN" + nameInstitution);
-					ownerName += getNameInstitution(nameInstitution);
-				}
+					if(nameList[0].contains("</td>"))
+						nameInstitution = nameList[0].split("</td>")[0].toString();
+					else
+						nameInstitution = nameList[0].toString();
 			
-			
-			//OwnershipType
-			
-			
+					nameInstitution.replaceAll("\\s+","");
+					ownerName = nameInstitution;
+				} 
 			System.out.println(ownerName);
 			owner.setName(ownerName);
 			owner.setOwnershipType(ownershipType);
 			owner.setParticipation(participation);
 			ownersAndSharesList.add(owner);
-			
 		}
-		
 		
 		return ownersAndSharesList;
 	}
@@ -299,18 +279,5 @@ public class ProcessFile {
 		name = input.split("Rodzice")[0];
 		return name;
 	}
-	
-	String getNameInstitution (String input) {
-		System.out.println("in "+input);
-		String name = null;
-		if(input.contains("</td>")) {
-			System.out.println("Jestem");
-			input.replace("</td>", " ");
-		}
-		name = input.split("br")[0];
-		System.out.println("name "+name);
-		return name;
-	}
-	
 	
 }
