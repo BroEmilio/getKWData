@@ -6,8 +6,9 @@ public class FieldData {
 	int id;
 	String FieldId;
 	String FieldNumber;
-	ArrayList<String> OwnersList = new ArrayList<String>();
+	ArrayList<Owner> OwnersList = new ArrayList<Owner>();
 	String KW;	
+	
 
 public FieldData(){
 	count++;
@@ -34,16 +35,16 @@ public void setFieldNumber(String fieldNumber) {
 	this.FieldNumber = fieldNumber;
 }
 
-public ArrayList<String> getOwnersList() {
+public ArrayList<Owner> getOwnersList() {
 	return OwnersList;
 }
 
-public void setOwnersList(ArrayList<String> ownersList) {
+public void setOwnersList(ArrayList<Owner> ownersList) {
 	this.OwnersList = ownersList;
 }
 
-public void addOwner(String name) {
-	this.OwnersList.add(name);
+public void addOwner(Owner owner) {
+	this.OwnersList.add(owner);
 }
 
 public String getKW() {
