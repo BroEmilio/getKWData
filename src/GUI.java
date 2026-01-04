@@ -4,15 +4,20 @@ import java.awt.EventQueue;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import java.awt.Font;
 import java.awt.GridBagLayout;
@@ -31,8 +36,10 @@ public class GUI extends JFrame{
     JFrame frame;
     Path choosedFile;
     ProcessFile fileProcessing = null;
-    JList<String> listFieldsNumbers;
-    
+    JList<String> listFieldsNumbers = null;
+    DefaultListModel<String> listModel;
+    JTextPane textPane = null;
+    ArrayList<FieldData> listFieldsData = new ArrayList<FieldData>();
 	/**
 	 * Launch the application.
 	 */
@@ -73,6 +80,8 @@ public class GUI extends JFrame{
         		if(choosedFile!=null) {
         			ProcessFile fileProcessing = new ProcessFile(choosedFile);
         			if(fileProcessing.run()) {
+        				listFieldsData = fileProcessing.listFieldsData;
+        				updateList();
         				/*
 	        			int result=JOptionPane.showConfirmDialog(null,
 	        						"Poprawnie przetworzono plik "+choosedFile.getFileName().toString(),
@@ -82,17 +91,7 @@ public class GUI extends JFrame{
         					System.exit(0);
         				*/
         			}
-        		DefaultListModel<String> listModel = new DefaultListModel<String>();
-        		for(FieldData oneField : fileProcessing.listFieldsData) {
-        			listModel.addElement(oneField.getFieldNumber());
-        		}
-        		System.out.println("lM:"+listModel.size());
-        		listFieldsNumbers=new JList<String>(listModel);
-        		//listFieldsNumbers.updateUI();
-        		//listFieldsNumbers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        		//listFieldsNumbers.setSelectedIndex(0);
-        		//listFieldsNumbers.addListSelectionListener(this);
-        		//listFieldsNumbers.setVisibleRowCount(5);
+        		
         		}
         	}		
     	});
@@ -139,7 +138,7 @@ public class GUI extends JFrame{
 		lblInfoFieldNum.setMaximumSize(new Dimension(90,70));
 		frame.getContentPane().add(lblInfoFieldNum, gbc_lblInfoFieldNum);
 		
-		JTextField textBox_FieldData = new JTextField();
+		textPane = new JTextPane();
 		GridBagConstraints gbc_FieldData = new GridBagConstraints();
 		gbc_FieldData.fill = GridBagConstraints.BOTH;
 		gbc_FieldData.insets = new Insets(0, 0, 5, 5);
@@ -147,21 +146,25 @@ public class GUI extends JFrame{
 		gbc_FieldData.gridy = 1;
 		gbc_FieldData.weightx=1;
 		gbc_FieldData.weighty=1;
-		frame.getContentPane().add(textBox_FieldData, gbc_FieldData);
+		frame.getContentPane().add(textPane, gbc_FieldData);
+
 		
+		JScrollPane scrollPane = new JScrollPane();
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 0);
+		gbc_scrollPane.gridx = 1;
+		gbc_scrollPane.gridy = 1;
+		frame.getContentPane().add(scrollPane, gbc_scrollPane);
 		listFieldsNumbers = new JList<String>();
-		GridBagConstraints gbc_listFieldsNumbers = new GridBagConstraints();
-		gbc_listFieldsNumbers.fill = GridBagConstraints.BOTH;
-		gbc_listFieldsNumbers.insets = new Insets(0, 0, 5, 0);
-		gbc_listFieldsNumbers.gridx = 1;
-		gbc_listFieldsNumbers.gridy = 1;
-		gbc_listFieldsNumbers.weightx=0;
-		frame.getContentPane().add(listFieldsNumbers, gbc_listFieldsNumbers);
+		scrollPane.setViewportView(listFieldsNumbers);
+		
+		
 		
 		JLabel lblAktualnieWSchowku = new JLabel("Aktualnie w schowku");
 		GridBagConstraints gbc_lblAktualnieWSchowku = new GridBagConstraints();
 		gbc_lblAktualnieWSchowku.gridwidth = 2;
-		gbc_lblAktualnieWSchowku.insets = new Insets(0, 0, 5, 5);
+		gbc_lblAktualnieWSchowku.insets = new Insets(0, 0, 5, 0);
 		gbc_lblAktualnieWSchowku.gridx = 0;
 		gbc_lblAktualnieWSchowku.gridy = 2;
 		frame.getContentPane().add(lblAktualnieWSchowku, gbc_lblAktualnieWSchowku);
@@ -174,5 +177,43 @@ public class GUI extends JFrame{
 		gbc_Clipboard.gridy = 3;
 		frame.getContentPane().add(textBox_Clipboard, gbc_Clipboard);
 		
+	}
+	
+	private void updateList() {
+		listModel = new DefaultListModel<String>();
+		for(FieldData oneField : listFieldsData) {
+			listModel.addElement(oneField.getFieldNumber());
+		}
+		System.out.println("lM:"+listModel.size());
+		//JScrollPane listScroller = new JScrollPane();
+		//listScroller.setViewportView(listFieldsNumbers);
+		listFieldsNumbers.setModel(listModel);
+		//listFieldsNumbers=new JList<String>(listModel);
+		
+		listFieldsNumbers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		listFieldsNumbers.setVisibleRowCount(-1);
+		frame.repaint();
+		
+		listFieldsNumbers.addListSelectionListener (new ListSelectionListener()
+	    {
+
+	        public void valueChanged (ListSelectionEvent e)
+	        {
+	            if (e.getValueIsAdjusting ( ) == false)
+	            {   
+	                //List <String> currentField = listFieldsNumbers.getSelectedValuesList();
+	                int currentIndex = listFieldsNumbers.getSelectedIndex();
+	                FieldData currentFieldData = listFieldsData.get(currentIndex);
+	                textPane.setText(currentFieldData.toString());
+	                
+	            }
+	        }
+
+	    });
+		
+		//listFieldsNumbers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		//listFieldsNumbers.setSelectedIndex(0);
+		//listFieldsNumbers.addListSelectionListener(this);
+		//listFieldsNumbers.setVisibleRowCount(5);
 	}
 }
