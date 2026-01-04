@@ -1,6 +1,7 @@
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JMenuBar;
@@ -9,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
+import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
 
 import java.awt.Font;
@@ -18,6 +21,8 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GUI extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -25,7 +30,9 @@ public class GUI extends JFrame{
 	Font style2 = new Font("Arial", Font.ITALIC, 12);
     JFrame frame;
     Path choosedFile;
-
+    ProcessFile fileProcessing = null;
+    JList<String> listFieldsNumbers;
+    
 	/**
 	 * Launch the application.
 	 */
@@ -66,13 +73,26 @@ public class GUI extends JFrame{
         		if(choosedFile!=null) {
         			ProcessFile fileProcessing = new ProcessFile(choosedFile);
         			if(fileProcessing.run()) {
+        				/*
 	        			int result=JOptionPane.showConfirmDialog(null,
 	        						"Poprawnie przetworzono plik "+choosedFile.getFileName().toString(),
 	        						"Poprawnie przetworzono",
 	        						JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
         				if(result==JOptionPane.OK_OPTION || result == JOptionPane.CANCEL_OPTION)
         					System.exit(0);
+        				*/
         			}
+        		DefaultListModel<String> listModel = new DefaultListModel<String>();
+        		for(FieldData oneField : fileProcessing.listFieldsData) {
+        			listModel.addElement(oneField.getFieldNumber());
+        		}
+        		System.out.println("lM:"+listModel.size());
+        		listFieldsNumbers=new JList<String>(listModel);
+        		//listFieldsNumbers.updateUI();
+        		//listFieldsNumbers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        		//listFieldsNumbers.setSelectedIndex(0);
+        		//listFieldsNumbers.addListSelectionListener(this);
+        		//listFieldsNumbers.setVisibleRowCount(5);
         		}
         	}		
     	});
@@ -129,7 +149,7 @@ public class GUI extends JFrame{
 		gbc_FieldData.weighty=1;
 		frame.getContentPane().add(textBox_FieldData, gbc_FieldData);
 		
-		JList<String> listFieldsNumbers = new JList<String>();
+		listFieldsNumbers = new JList<String>();
 		GridBagConstraints gbc_listFieldsNumbers = new GridBagConstraints();
 		gbc_listFieldsNumbers.fill = GridBagConstraints.BOTH;
 		gbc_listFieldsNumbers.insets = new Insets(0, 0, 5, 0);
