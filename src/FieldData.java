@@ -85,7 +85,7 @@ public String toString() {
 		
 		output += "\r\n";
 	}
-	output += "KW "+ KW +"\r\n\r\n";
+	output += "KW "+ KW;
 	
 	return output;
 }
