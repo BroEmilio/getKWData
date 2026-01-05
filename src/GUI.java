@@ -133,10 +133,10 @@ public class GUI extends JFrame{
 		}
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.rowWeights = new double[]{0.0, 1.0, 0.0, 0.0};
+		gridBagLayout.rowWeights = new double[]{0.0, 1.0, 0.0, 0.5};
 		gridBagLayout.columnWeights = new double[]{1.0, 0.0};
 		gridBagLayout.columnWidths = new int[]{245, 89};
-		gridBagLayout.rowHeights = new int[]{63, 154, 22, 76};
+		gridBagLayout.rowHeights = new int[]{63, 120, 22, 90};
 		frame.getContentPane().setLayout(gridBagLayout);
 			
 		JLabel lblInfoFieldNum = new JLabel(
@@ -230,8 +230,11 @@ public class GUI extends JFrame{
 	                textPane.getStyledDocument().setCharacterAttributes(0, stringLength, sas, false);
 	                
 	                Transferable content = clipboard.getContents(null);
-	                if(content !=  null)
+	                if(content !=  null){
 	                	textBox_Clipboard.setText(getStringFromTransferable(content));
+	                	textBox_Clipboard.updateUI();
+	                	textBox_Clipboard.setCaretPosition(0);
+	                }
 	            }
 	        }
 
@@ -243,11 +246,21 @@ public class GUI extends JFrame{
 		        if (evt.getClickCount() == 2 || evt.getClickCount() == 3) {
 		        	// Double and Triple click detected
 		        	int currentIndex = listFieldsNumbers.getSelectedIndex();
-		        	StringSelection selection = new StringSelection(listFieldsData.get(currentIndex).toString());
+		        	String displaingText = listFieldsData.get(currentIndex).toString();
+		        	String clipboardText = "";
+		        	String[] clipboardArray = displaingText.split("\\n");
+		        	displaingText = "Dane dla dzia³ki : " +clipboardArray[0]+"\n";
+		        	for(int i=1; i<clipboardArray.length; i++){
+		        		displaingText += clipboardArray[i]+"\n";
+		        		clipboardText += clipboardArray[i]+"\n";
+		        	}
+		        	StringSelection selection = new StringSelection(clipboardText);
 	                clipboard.setContents(selection, selection);
 		            int index = listFieldsNumbers.locationToIndex(evt.getPoint());
 		            Transferable content = clipboard.getContents(null);
+		            textBox_Clipboard.setText("");
 		            textBox_Clipboard.setText(getStringFromTransferable(content));
+		            textBox_Clipboard.setCaretPosition(0);
 		        } 
 		        //scrollClipboard.getVerticalScrollBar().setLocation(new Point(0,0));;	
 		        //int index = listFieldsNumbers.locationToIndex(evt.getPoint());
