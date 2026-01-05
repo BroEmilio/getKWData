@@ -25,8 +25,18 @@ import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +52,9 @@ public class GUI extends JFrame{
     DefaultListModel<String> listModel;
     JTextPane textPane = null;
     ArrayList<FieldData> listFieldsData = new ArrayList<FieldData>();
+    Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+    JTextArea textBox_Clipboard = null;
+    JScrollPane scrollClipboard = null;
 	/**
 	 * Launch the application.
 	 */
@@ -171,13 +184,17 @@ public class GUI extends JFrame{
 		gbc_lblAktualnieWSchowku.gridy = 2;
 		frame.getContentPane().add(lblAktualnieWSchowku, gbc_lblAktualnieWSchowku);
 		
-		JTextField textBox_Clipboard = new JTextField();
+		scrollClipboard = new JScrollPane();
+		textBox_Clipboard = new JTextArea();
+		scrollClipboard.add(textBox_Clipboard);
+		scrollClipboard.setViewportView(textBox_Clipboard);
+		textBox_Clipboard.setEditable(false);
 		GridBagConstraints gbc_Clipboard = new GridBagConstraints();
 		gbc_Clipboard.gridwidth = 2;
 		gbc_Clipboard.fill = GridBagConstraints.BOTH;
 		gbc_Clipboard.gridx = 0;
 		gbc_Clipboard.gridy = 3;
-		frame.getContentPane().add(textBox_Clipboard, gbc_Clipboard);
+		frame.getContentPane().add(scrollClipboard, gbc_Clipboard);
 		
 	}
 	
@@ -198,7 +215,6 @@ public class GUI extends JFrame{
 		
 		listFieldsNumbers.addListSelectionListener (new ListSelectionListener()
 	    {
-
 	        public void valueChanged (ListSelectionEvent e)
 	        {
 	            if (e.getValueIsAdjusting ( ) == false)
@@ -213,14 +229,47 @@ public class GUI extends JFrame{
 	                int stringLength = currentFieldData.getFieldId().length() + currentFieldData.getFieldNumber().length() + 3;
 	                textPane.getStyledDocument().setCharacterAttributes(0, stringLength, sas, false);
 	                
+	                Transferable content = clipboard.getContents(null);
+	                if(content !=  null)
+	                	textBox_Clipboard.setText(getStringFromTransferable(content));
 	            }
 	        }
 
 	    });
 		
+		listFieldsNumbers.addMouseListener(new MouseAdapter() {
+		    public void mouseClicked(MouseEvent evt) {
+		    	listFieldsNumbers = (JList<String>)evt.getSource();
+		        if (evt.getClickCount() == 2 || evt.getClickCount() == 3) {
+		        	// Double and Triple click detected
+		        	int currentIndex = listFieldsNumbers.getSelectedIndex();
+		        	StringSelection selection = new StringSelection(listFieldsData.get(currentIndex).toString());
+	                clipboard.setContents(selection, selection);
+		            int index = listFieldsNumbers.locationToIndex(evt.getPoint());
+		            Transferable content = clipboard.getContents(null);
+		            textBox_Clipboard.setText(getStringFromTransferable(content));
+		        } 
+		        //scrollClipboard.getVerticalScrollBar().setLocation(new Point(0,0));;	
+		        //int index = listFieldsNumbers.locationToIndex(evt.getPoint());
+		    }
+		});
+		
 		//listFieldsNumbers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		//listFieldsNumbers.setSelectedIndex(0);
 		//listFieldsNumbers.addListSelectionListener(this);
 		//listFieldsNumbers.setVisibleRowCount(5);
+	}
+	
+	private String getStringFromTransferable(Transferable contents){
+		String result = null;
+		boolean hasStringText = (contents != null) && contents.isDataFlavorSupported(DataFlavor.stringFlavor);
+		if (hasStringText) {
+		    try {
+		        result = (String)contents.getTransferData(DataFlavor.stringFlavor);
+		    } catch (UnsupportedFlavorException | IOException ex) {
+		        System.out.println(ex); ex.printStackTrace();
+		    }	
+		}
+		return result;
 	}
 }
