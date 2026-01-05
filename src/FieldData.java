@@ -60,19 +60,30 @@ public String toString() {
 	String output = "";
 	output = FieldNumber +" - " + FieldId + "\r\n";
 	boolean isFirst=true;
+	boolean shortSpace = false;
 	for(Owner owner:OwnersList) {
+		shortSpace = false;
 		if(isFirst) {
 			if(owner.getOwnershipType().equals("W³asnoœæ"))
 				output += "W£. ";
 			isFirst = false;
+			shortSpace = true;
 		} else if(! owner.getOwnershipType().equals("W³asnoœæ")) {
 			output += "ZA. ";
+			shortSpace = true;
 		}
 		
-		if(output.equals("W£.")) {
-			output += owner.toString() +"\r\n";
+		if(shortSpace) {
+			output += owner.toString();
 		} else
-			output += "   "+owner.toString() +"\r\n";
+			output += "   "+owner.toString();
+		
+		if(OwnersList.size()>1){
+			if(! shortSpace || owner.getOwnershipType().equals("W³asnoœæ"))
+				output += ",";
+		}
+		
+		output += "\r\n";
 	}
 	output += "KW "+ KW +"\r\n\r\n";
 	
