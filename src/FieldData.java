@@ -59,8 +59,20 @@ public void setKW(String kW) {
 public String toString() {
 	String output = "";
 	output = FieldNumber +" - " + FieldId + "\r\n";
+	boolean isFirst=true;
 	for(Owner owner:OwnersList) {
-		output += owner.toString() +"\r\n";
+		if(isFirst) {
+			if(owner.getOwnershipType().equals("W³asnoœæ"))
+				output += "W£. ";
+			isFirst = false;
+		} else if(! owner.getOwnershipType().equals("W³asnoœæ")) {
+			output += "ZA. ";
+		}
+		
+		if(output.equals("W£.")) {
+			output += owner.toString() +"\r\n";
+		} else
+			output += "   "+owner.toString() +"\r\n";
 	}
 	output += "KW "+ KW +"\r\n\r\n";
 	

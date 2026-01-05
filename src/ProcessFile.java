@@ -256,12 +256,12 @@ public class ProcessFile {
 				// get institutions names
 				if(! nameList[0].contains("ma³¿eñstwo")) {
 					String nameInstitution = "";
-					if(nameList[0].contains("</td>"))
+					if(nameList[0].contains("</td>")) {
 						nameInstitution = nameList[0].split("</td>")[0].toString();
-					else
-						nameInstitution = nameList[0].toString();
-			
-					nameInstitution.replaceAll("\\s+","");
+					}
+					else {
+						nameInstitution = nameList[0].split("\n")[0].toString();
+					}
 					ownerName = nameInstitution;
 				} 
 			System.out.println(ownerName);

@@ -18,6 +18,8 @@ import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
 
 import java.awt.Font;
 import java.awt.GridBagLayout;
@@ -205,6 +207,11 @@ public class GUI extends JFrame{
 	                int currentIndex = listFieldsNumbers.getSelectedIndex();
 	                FieldData currentFieldData = listFieldsData.get(currentIndex);
 	                textPane.setText(currentFieldData.toString());
+	                SimpleAttributeSet sas = new SimpleAttributeSet();
+	                StyleConstants.setBold(sas, true);
+	                StyleConstants.setFontSize(sas, 14);
+	                int stringLength = currentFieldData.getFieldId().length() + currentFieldData.getFieldNumber().length() + 3;
+	                textPane.getStyledDocument().setCharacterAttributes(0, stringLength, sas, false);
 	                
 	            }
 	        }
