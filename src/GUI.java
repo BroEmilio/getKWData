@@ -1,31 +1,9 @@
 import java.awt.Dimension;
 import java.awt.EventQueue;
-
-import javax.swing.DefaultListModel;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JMenu;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.ListModel;
-import javax.swing.ListSelectionModel;
-import javax.swing.UIManager;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-
 import java.awt.Font;
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -39,7 +17,24 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.UIManager;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
 
 public class GUI extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -55,7 +50,10 @@ public class GUI extends JFrame{
     Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
     JTextArea textBox_Clipboard = null;
     JScrollPane scrollClipboard = null;
-	/**
+    JLabel lblAktualnieWSchowku = null;
+	
+    
+    /**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
@@ -83,10 +81,13 @@ public class GUI extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	private void createMenuBar() {
-		JMenu menuFile = new JMenu("Plik");
+		JMenu menuFile = new JMenu("  Wczytaj plik  ");
 		menuFile.setFont(style1);
 		
-		JMenuItem loadItem = new JMenuItem("Wczytaj plik html z danymi EGiB");
+		JMenu menuInfo = new JMenu("Info");
+		menuInfo.setFont(style1);
+		
+		JMenuItem loadItem = new JMenuItem("html z danymi EGiB - GEOPORTAL2");
 		loadItem.setFont(style2);
 		loadItem.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
@@ -97,30 +98,35 @@ public class GUI extends JFrame{
         			if(fileProcessing.run()) {
         				listFieldsData = fileProcessing.listFieldsData;
         				updateList();
-        				/*
-	        			int result=JOptionPane.showConfirmDialog(null,
-	        						"Poprawnie przetworzono plik "+choosedFile.getFileName().toString(),
-	        						"Poprawnie przetworzono",
-	        						JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
-        				if(result==JOptionPane.OK_OPTION || result == JOptionPane.CANCEL_OPTION)
-        					System.exit(0);
-        				*/
         			}
         		
         		}
         	}		
     	});
 		
+		JMenuItem infoItem = new JMenuItem("Instrukcja obs³ugi");
+		final String info = "1. Wyœwietl dane opisowe EGiB w geoportalu (tak ¿eby by³o widaæ w³aœcicieli, numery KW, itp)\n"+
+					  "2. Naciœnij prawy przycisk i wybierz Zapisz stronê lub coœ podobnego (w zale¿noœci od przegl¹darki)\n"+
+					  "3. Zapisan¹ stronê wczytaj w programie\n"+
+					  "4. Podwójne klikniêcie w numer dzia³ki skopiuje wybrane dane w³aœcicieli do schowka\n\n\n"+
+					  "Ewentualne uwagi proszê kierowaæ na adres: bro.emilio.1.1@gmail.com";
+		infoItem.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		JOptionPane.showMessageDialog(null,info,"Instrukcja obs³ugi",1);
+        	}
+		});
 		menuFile.add(loadItem);
+		menuInfo.add(infoItem);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.add(menuFile);
+		menuBar.add(menuInfo);
 		menuBar.setFont(style1);
 		frame.setJMenuBar(menuBar);
 	}
 	
 	private void initialize() {
-		frame = new JFrame();
+		frame = new JFrame("szkicEGiB v0.98");
 		frame.setBounds(100, 100, 345, 393);
 		frame.setMinimumSize(new Dimension(300,350));
 		frame.setMaximumSize(new Dimension(600,700));
@@ -176,13 +182,16 @@ public class GUI extends JFrame{
 		
 		
 		
-		JLabel lblAktualnieWSchowku = new JLabel("Aktualnie w schowku");
+		lblAktualnieWSchowku = new JLabel("Aktualnie w schowku");
 		GridBagConstraints gbc_lblAktualnieWSchowku = new GridBagConstraints();
 		gbc_lblAktualnieWSchowku.gridwidth = 2;
 		gbc_lblAktualnieWSchowku.insets = new Insets(0, 0, 5, 0);
 		gbc_lblAktualnieWSchowku.gridx = 0;
 		gbc_lblAktualnieWSchowku.gridy = 2;
+		gbc_lblAktualnieWSchowku.fill = GridBagConstraints.HORIZONTAL;
 		frame.getContentPane().add(lblAktualnieWSchowku, gbc_lblAktualnieWSchowku);
+		lblAktualnieWSchowku.setMinimumSize(new Dimension(90, 20));
+		lblAktualnieWSchowku.setAlignmentX(CENTER_ALIGNMENT);
 		
 		scrollClipboard = new JScrollPane();
 		textBox_Clipboard = new JTextArea();
@@ -203,11 +212,7 @@ public class GUI extends JFrame{
 		for(FieldData oneField : listFieldsData) {
 			listModel.addElement(oneField.getFieldNumber());
 		}
-		System.out.println("lM:"+listModel.size());
-		//JScrollPane listScroller = new JScrollPane();
-		//listScroller.setViewportView(listFieldsNumbers);
 		listFieldsNumbers.setModel(listModel);
-		//listFieldsNumbers=new JList<String>(listModel);
 		
 		listFieldsNumbers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		listFieldsNumbers.setVisibleRowCount(-1);
@@ -219,7 +224,6 @@ public class GUI extends JFrame{
 	        {
 	            if (e.getValueIsAdjusting ( ) == false)
 	            {   
-	                //List <String> currentField = listFieldsNumbers.getSelectedValuesList();
 	                int currentIndex = listFieldsNumbers.getSelectedIndex();
 	                FieldData currentFieldData = listFieldsData.get(currentIndex);
 	                textPane.setText(currentFieldData.toString());
@@ -241,7 +245,8 @@ public class GUI extends JFrame{
 	    });
 		
 		listFieldsNumbers.addMouseListener(new MouseAdapter() {
-		    public void mouseClicked(MouseEvent evt) {
+		    @SuppressWarnings("unchecked")
+			public void mouseClicked(MouseEvent evt) {
 		    	listFieldsNumbers = (JList<String>)evt.getSource();
 		        if (evt.getClickCount() == 2 || evt.getClickCount() == 3) {
 		        	// Double and Triple click detected
@@ -249,28 +254,20 @@ public class GUI extends JFrame{
 		        	String displaingText = listFieldsData.get(currentIndex).toString();
 		        	String clipboardText = "";
 		        	String[] clipboardArray = displaingText.split("\\n");
-		        	displaingText = "Dane dla dzia³ki : " +clipboardArray[0]+"\n";
+		        	displaingText = "<html>W schowku: <B>" +clipboardArray[0]+"</B>\n</html>";
+		        	lblAktualnieWSchowku.setText(displaingText);
+		        	lblAktualnieWSchowku.updateUI();
 		        	for(int i=1; i<clipboardArray.length; i++){
-		        		displaingText += clipboardArray[i]+"\n";
 		        		clipboardText += clipboardArray[i]+"\n";
 		        	}
 		        	StringSelection selection = new StringSelection(clipboardText);
 	                clipboard.setContents(selection, selection);
-		            int index = listFieldsNumbers.locationToIndex(evt.getPoint());
 		            Transferable content = clipboard.getContents(null);
-		            textBox_Clipboard.setText("");
 		            textBox_Clipboard.setText(getStringFromTransferable(content));
 		            textBox_Clipboard.setCaretPosition(0);
 		        } 
-		        //scrollClipboard.getVerticalScrollBar().setLocation(new Point(0,0));;	
-		        //int index = listFieldsNumbers.locationToIndex(evt.getPoint());
 		    }
 		});
-		
-		//listFieldsNumbers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		//listFieldsNumbers.setSelectedIndex(0);
-		//listFieldsNumbers.addListSelectionListener(this);
-		//listFieldsNumbers.setVisibleRowCount(5);
 	}
 	
 	private String getStringFromTransferable(Transferable contents){
